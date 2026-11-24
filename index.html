@@ -5,32 +5,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#1B2A4A">
-<title>OMNIA Store | Corporation & Digital Products</title>
-<meta name="description" content="OMNIA Corporation & Store. Produk digital, desain kreatif, template bisnis, dan solusi digital untuk kebutuhan Anda.">
+<title>OMNIA Store | Digital Products & Creative Services</title>
+<meta name="description" content="OMNIA Store menyediakan produk digital, template bisnis, desain kreatif, tools dan solusi digital praktis.">
 
 <style>
 :root{
   --navy:#1B2A4A;
-  --navy2:#263A60;
+  --navy2:#2B4168;
   --gold:#C9A96E;
   --gold-light:#E9D9B5;
   --bg:#F7F8FA;
-  --white:#FFFFFF;
+  --white:#fff;
   --ink:#202A3B;
-  --muted:#728096;
-  --line:#E7EAF0;
+  --muted:#738096;
+  --line:#E6EAF0;
   --green:#16834A;
   --radius:22px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;background:var(--bg);color:var(--ink);
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  line-height:1.65;-webkit-font-smoothing:antialiased
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
 }
+button,input,textarea,select{font:inherit}
 a{color:inherit}
-button{font-family:inherit}
 .wrap{max-width:1160px;margin:auto;padding:0 24px}
 
 /* HEADER */
@@ -40,28 +43,46 @@ header{
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(255,255,255,.08)
 }
-.bar{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:white}
-.logo-symbol{width:46px;height:46px;flex-shrink:0}
-.logo-text b{display:block;font-size:16px;letter-spacing:2.5px;font-weight:600}
-.logo-text small{display:block;font-size:10px;letter-spacing:1.6px;color:#B9C7DC}
+.bar{
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between
+}
+.logo{
+  display:flex;align-items:center;gap:12px;
+  text-decoration:none;color:#fff
+}
+.logo-image{
+  width:46px;height:46px;
+  object-fit:contain;display:block;flex-shrink:0
+}
+.logo-text b{
+  display:block;font-size:15px;letter-spacing:2.5px;font-weight:700
+}
+.logo-text small{
+  display:block;font-size:10px;letter-spacing:1.4px;color:#AABBD6
+}
 .nav{display:flex;align-items:center;gap:5px}
 .nav a{
-  text-decoration:none;color:#D3DDEE;font-size:13px;
+  color:#D3DDEE;text-decoration:none;font-size:13px;
   padding:9px 13px;border-radius:12px;transition:.2s
 }
-.nav a:hover{background:rgba(255,255,255,.08);color:white}
+.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
 .nav .nav-cta{background:var(--gold);color:var(--navy);font-weight:700}
 
 /* HERO */
 .hero{
-  color:white;padding:84px 0 100px;overflow:hidden;
+  color:white;padding:86px 0 100px;overflow:hidden;
   background:
     radial-gradient(ellipse at 85% 10%,rgba(201,169,110,.17),transparent 42%),
     radial-gradient(ellipse at 0% 100%,rgba(54,83,130,.4),transparent 48%),
     linear-gradient(145deg,#182641,#22375D)
 }
-.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero-inner{
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:54px;align-items:center
+}
 .eyebrow{
   display:inline-flex;align-items:center;gap:9px;
   padding:7px 13px;border-radius:100px;
@@ -69,10 +90,14 @@ header{
   border:1px solid rgba(233,217,181,.25);
   background:rgba(255,255,255,.05)
 }
-.eyebrow:before{content:"";width:6px;height:6px;background:var(--gold);border-radius:50%}
+.eyebrow:before{
+  content:"";width:6px;height:6px;
+  background:var(--gold);border-radius:50%
+}
 .hero h1{
-  font-size:clamp(36px,5.3vw,58px);line-height:1.12;
-  letter-spacing:-1.8px;margin:24px 0 20px;font-weight:650
+  font-size:clamp(36px,5.3vw,58px);
+  line-height:1.12;letter-spacing:-1.8px;
+  margin:24px 0 20px;font-weight:700
 }
 .hero h1 span{color:var(--gold-light)}
 .hero-copy{color:#C8D4E7;max-width:550px;font-size:16px;margin-bottom:30px}
@@ -80,7 +105,8 @@ header{
 .btn{
   display:inline-flex;align-items:center;justify-content:center;
   border:0;text-decoration:none;cursor:pointer;
-  border-radius:13px;padding:13px 21px;font-size:14px;font-weight:600;
+  border-radius:13px;padding:13px 21px;
+  font-size:14px;font-weight:600;
   transition:transform .18s,background .2s,border .2s
 }
 .btn:hover{transform:translateY(-2px)}
@@ -92,8 +118,9 @@ header{
 .btn-navy{background:var(--navy);color:white}
 .btn-navy:hover{background:var(--navy2)}
 .btn-wa{background:var(--green);color:white}
+.btn:disabled{opacity:.6;cursor:wait;transform:none}
 
-/* HERO PANEL */
+/* HERO ASSISTANT */
 .hero-panel{
   background:#fff;color:var(--ink);padding:25px;border-radius:26px;
   box-shadow:0 28px 80px -40px rgba(0,0,0,.5);
@@ -102,18 +129,20 @@ header{
 .panel-top{display:flex;align-items:center;gap:13px;margin-bottom:18px}
 .panel-icon{
   width:46px;height:46px;border-radius:15px;background:var(--navy);
-  display:grid;place-items:center;color:var(--gold);font-size:17px;font-weight:700
+  display:grid;place-items:center;color:var(--gold);font-size:17px;font-weight:700;
+  overflow:hidden
 }
+.panel-icon img{width:100%;height:100%;object-fit:contain}
 .panel-top b{display:block;font-size:14px}
 .panel-top small{display:block;color:var(--muted);font-size:11px}
 .chat-preview{display:grid;gap:10px}
 .chat-bubble{
-  background:#F1F4F8;padding:12px 15px;border-radius:16px 16px 16px 5px;
-  font-size:13.5px;color:#455268
+  background:#F1F4F8;padding:12px 15px;
+  border-radius:16px 16px 16px 5px;font-size:13.5px;color:#455268
 }
 .chat-bubble.reply{
-  background:var(--navy);color:white;border-radius:16px 16px 5px 16px;
-  margin-left:25px
+  background:var(--navy);color:white;
+  border-radius:16px 16px 5px 16px;margin-left:25px
 }
 .chat-choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
 .choice{
@@ -136,10 +165,16 @@ header{
 .trust-card b{display:block;font-size:14px;margin-bottom:4px}
 .trust-card span{display:block;font-size:12.5px;color:var(--muted)}
 
-/* SECTION */
+/* SECTIONS */
 section{padding:82px 0}
-.section-label{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#A17D43;font-weight:700}
-h2{color:var(--navy);font-size:clamp(27px,3.6vw,38px);line-height:1.2;letter-spacing:-.7px;margin:11px 0}
+.section-label{
+  font-size:11px;letter-spacing:1.8px;
+  text-transform:uppercase;color:#A17D43;font-weight:700
+}
+h2{
+  color:var(--navy);font-size:clamp(27px,3.6vw,38px);
+  line-height:1.2;letter-spacing:-.7px;margin:11px 0
+}
 .section-lead{max-width:640px;color:var(--muted);font-size:15px;margin:0 0 34px}
 
 /* PRODUCTS */
@@ -156,12 +191,14 @@ h2{color:var(--navy);font-size:clamp(27px,3.6vw,38px);line-height:1.2;letter-spa
   position:relative;overflow:hidden
 }
 .product-cover:after{
-  content:"";position:absolute;width:150px;height:150px;border:1px solid rgba(201,169,110,.18);
-  border-radius:50%;right:-55px;bottom:-80px
+  content:"";position:absolute;width:150px;height:150px;
+  border:1px solid rgba(201,169,110,.18);border-radius:50%;
+  right:-55px;bottom:-80px
 }
 .product-cover:before{
-  content:"";position:absolute;width:90px;height:90px;border:1px solid rgba(201,169,110,.12);
-  border-radius:50%;right:-25px;bottom:-45px
+  content:"";position:absolute;width:90px;height:90px;
+  border:1px solid rgba(201,169,110,.12);border-radius:50%;
+  right:-25px;bottom:-45px
 }
 .product-cover span{position:relative;z-index:1;font-size:12px;letter-spacing:2px;font-weight:700}
 .cover-2{background:linear-gradient(145deg,#344A6F,#1B2A4A)}
@@ -174,15 +211,19 @@ h2{color:var(--navy);font-size:clamp(27px,3.6vw,38px);line-height:1.2;letter-spa
 .product-info{padding:18px;display:flex;flex-direction:column;flex:1}
 .product-tag{
   font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#9B7A43;
-  background:#F7F1E5;padding:5px 9px;border-radius:99px;width:fit-content;margin-bottom:9px
+  background:#F7F1E5;padding:5px 9px;border-radius:99px;
+  width:fit-content;margin-bottom:9px
 }
 .product-info h3{font-size:15px;color:var(--navy);margin:0 0 8px;line-height:1.4}
 .product-info p{font-size:12.5px;color:var(--muted);margin:0 0 17px;flex:1}
-.product-bottom{border-top:1px solid var(--line);padding-top:13px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.product-bottom{
+  border-top:1px solid var(--line);padding-top:13px;
+  display:flex;align-items:center;justify-content:space-between;gap:8px
+}
 .product-price{font-size:13px;font-weight:700;color:var(--navy)}
 .product-bottom button{font-size:12px;padding:9px 12px;border-radius:10px}
 
-/* CUSTOM SERVICES */
+/* SERVICES */
 .services{background:var(--bg)}
 .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
 .service-card{
@@ -192,11 +233,15 @@ h2{color:var(--navy);font-size:clamp(27px,3.6vw,38px);line-height:1.2;letter-spa
 .service-card:hover{transform:translateY(-3px);box-shadow:0 22px 45px -30px rgba(15,23,42,.35)}
 .service-icon{
   width:48px;height:48px;border-radius:15px;background:#F2F4F8;
-  color:var(--navy);display:grid;place-items:center;font-size:13px;font-weight:700;margin-bottom:14px
+  color:var(--navy);display:grid;place-items:center;
+  font-size:13px;font-weight:700;margin-bottom:14px
 }
 .service-card h3{font-size:15px;color:var(--navy);margin:0 0 7px}
 .service-card p{font-size:12.5px;color:var(--muted);margin:0 0 16px;flex:1}
-.service-bottom{border-top:1px solid var(--line);padding-top:13px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.service-bottom{
+  border-top:1px solid var(--line);padding-top:13px;
+  display:flex;align-items:center;justify-content:space-between;gap:8px
+}
 .service-bottom span{font-size:11px;color:var(--muted)}
 .service-bottom button{font-size:12px;padding:9px 12px;border-radius:10px}
 
@@ -232,7 +277,7 @@ h2{color:var(--navy);font-size:clamp(27px,3.6vw,38px);line-height:1.2;letter-spa
   outline:none;border-color:var(--navy);background:white
 }
 .order-form textarea{min-height:105px;resize:vertical}
-.consent{display:flex;gap:10px;align-items:flex-start;font-size:11.5px;color:var(--muted);margin:17px 0}
+.consent{display:flex!important;gap:10px;align-items:flex-start;font-size:11.5px!important;color:var(--muted)!important;margin:17px 0!important;font-weight:400!important}
 .consent input{width:auto;margin-top:4px;accent-color:var(--navy)}
 .form-actions{display:flex;gap:10px;margin-top:16px}
 .form-actions button{flex:1}
@@ -246,7 +291,10 @@ details{
   border:1px solid var(--line);background:white;border-radius:15px;
   padding:17px 19px;margin-bottom:11px
 }
-summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:15px;font-size:13px;font-weight:700;color:var(--navy)}
+summary{
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+  gap:15px;font-size:13px;font-weight:700;color:var(--navy)
+}
 summary::-webkit-details-marker{display:none}
 summary:after{content:"+";font-size:20px;color:var(--gold);line-height:1}
 details[open] summary:after{content:"−"}
@@ -264,7 +312,7 @@ footer a{display:block;color:var(--gold-light);text-decoration:none;font-size:12
 footer a:hover{text-decoration:underline}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:11px;color:#899AB9}
 
-/* FLOAT WA */
+/* FLOATING CONTACT */
 .float-wa{
   position:fixed;bottom:20px;right:20px;z-index:60;
   background:#16834A;color:white;text-decoration:none;
@@ -272,7 +320,7 @@ footer a:hover{text-decoration:underline}
   box-shadow:0 8px 30px -10px rgba(0,0,0,.4)
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 @media(max-width:1000px){
   .product-grid,.service-grid{grid-template-columns:repeat(2,1fr)}
   .hero-inner,.order-grid{grid-template-columns:1fr;gap:32px}
@@ -288,7 +336,7 @@ footer a:hover{text-decoration:underline}
 @media(max-width:480px){
   .wrap{padding:0 17px}
   .bar{height:68px}
-  .logo-symbol{width:40px;height:40px}
+  .logo-image{width:42px;height:42px}
   .hero h1{font-size:37px}
   .hero{padding:55px 0 78px}
   .product-grid,.service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
@@ -313,16 +361,10 @@ footer a:hover{text-decoration:underline}
 
 <body>
 
-<!-- HEADER / LOGO SVG EMBEDDED -->
 <header>
   <div class="wrap bar">
     <a class="logo" href="#top" aria-label="OMNIA Corporation Store">
-      <svg class="logo-symbol" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Logo OMNIA">
-        <circle cx="50" cy="50" r="46" fill="none" stroke="#C9A96E" stroke-width="2.2"/>
-        <circle cx="50" cy="50" r="27" fill="none" stroke="#E9D9B5" stroke-width="2"/>
-        <path d="M50 23 L69 42 L69 59 L50 77 L31 59 L31 42 Z" fill="none" stroke="#C9A96E" stroke-width="2"/>
-        <path d="M31 42 L50 23 L69 42 M31 59 L50 77 L69 59" fill="none" stroke="#E9D9B5" stroke-width="1.8"/>
-      </svg>
+      <img src="omnia-logo.png" alt="Logo OMNIA" class="logo-image">
       <div class="logo-text">
         <b>OMNIA</b>
         <small>CORPORATION · STORE</small>
@@ -359,7 +401,9 @@ footer a:hover{text-decoration:underline}
 
     <div class="hero-panel">
       <div class="panel-top">
-        <div class="panel-icon">O</div>
+        <div class="panel-icon">
+          <img src="omnia-logo.png" alt="">
+        </div>
         <div>
           <b>Asisten OMNIA</b>
           <small>Temukan produk dan layanan yang sesuai</small>
@@ -623,7 +667,7 @@ footer a:hover{text-decoration:underline}
 
     <form class="order-form" id="orderForm">
       <label for="nama">Nama</label>
-      <input id="nama" name="nama" type="text" placeholder="Nama Anda" required>
+      <input id="nama" name="nama" type="text" placeholder="Nama Anda" autocomplete="name" required>
 
       <label for="kontak">WhatsApp atau email</label>
       <input id="kontak" name="kontak" type="text" placeholder="Nomor WhatsApp / email" required>
@@ -643,6 +687,11 @@ footer a:hover{text-decoration:underline}
         <option>Undangan Digital</option>
         <option>Ilustrasi Gambar</option>
         <option>Aplikasi Sederhana</option>
+        <option>Template bisnis</option>
+        <option>Desain promosi</option>
+        <option>CV dan karier</option>
+        <option>Produk digital</option>
+        <option>Aplikasi custom</option>
         <option>Lainnya</option>
       </select>
 
@@ -658,7 +707,7 @@ footer a:hover{text-decoration:underline}
         <button class="btn btn-navy" type="submit" id="submitBtn">Kirim Pesanan</button>
         <button class="btn btn-wa" type="button" id="waBtn">WhatsApp</button>
       </div>
-      <div class="form-message" id="formMessage"></div>
+      <div class="form-message" id="formMessage" role="status"></div>
     </form>
   </div>
 </section>
@@ -705,12 +754,7 @@ footer a:hover{text-decoration:underline}
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <svg class="logo-symbol" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="46" fill="none" stroke="#C9A96E" stroke-width="2.2"/>
-            <circle cx="50" cy="50" r="27" fill="none" stroke="#E9D9B5" stroke-width="2"/>
-            <path d="M50 23 L69 42 L69 59 L50 77 L31 59 L31 42 Z" fill="none" stroke="#C9A96E" stroke-width="2"/>
-            <path d="M31 42 L50 23 L69 42 M31 59 L50 77 L69 59" fill="none" stroke="#E9D9B5" stroke-width="1.8"/>
-          </svg>
+          <img src="omnia-logo.png" alt="Logo OMNIA" class="logo-image">
           <div>
             <b>OMNIA</b>
             <small>CORPORATION · STORE</small>
@@ -732,11 +776,12 @@ footer a:hover{text-decoration:underline}
 
       <div>
         <h4>Hubungi OMNIA</h4>
-        <a href="https://lynk.id/omnia_corp" target="_blank" rel="noopener">Lynk OMNIA</a>
-        <a href="https://www.instagram.com/omnia.corp_/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://lynk.id/omnia_corp" target="_blank" rel="noopener noreferrer">Lynk OMNIA</a>
+        <a href="https://www.instagram.com/omnia.corp_/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="#pesan">Form Pemesanan</a>
       </div>
     </div>
+
     <div class="footer-bottom">
       © <span id="year"></span> OMNIA Corporation · Store. All rights reserved.
     </div>
@@ -746,29 +791,34 @@ footer a:hover{text-decoration:underline}
 <a class="float-wa" href="#pesan" aria-label="Hubungi OMNIA">Hubungi OMNIA ↗</a>
 
 <script>
-/* ================================
-   OMNIA STORE
-   ================================ */
+/* ==============================
+   OMNIA STORE CONFIG
+============================== */
 
-/* Isi nomor WhatsApp OMNIA tanpa tanda + */
+/* Ganti dengan nomor WA bisnis OMNIA, tanpa tanda + */
 const NOMOR_WA = "62XXXXXXXXXX";
 
-/* Supabase Function endpoint OMNIA */
+/* Endpoint Supabase yang sudah digunakan */
 const API_URL = "https://ianvkkefykbhvmxummye.supabase.co/functions/v1/toko";
 
 /* Tahun footer */
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* Helper: pilih kebutuhan dan arahkan ke form */
+/* Helper untuk mengisi form dan scroll */
 function pilihKebutuhan(value, detailTambahan=""){
-  document.getElementById("minat").value = value;
+  const minat = document.getElementById("minat");
+  const detail = document.getElementById("detail");
+
+  minat.value = value;
+
   if(detailTambahan){
-    document.getElementById("detail").value = detailTambahan;
+    detail.value = detailTambahan;
   }
+
   document.getElementById("pesan").scrollIntoView({behavior:"smooth"});
 }
 
-/* Pilihan pada asisten hero */
+/* Asisten OMNIA */
 document.querySelectorAll(".choice").forEach(button=>{
   button.addEventListener("click",()=>{
     const value = button.dataset.interest;
@@ -781,31 +831,39 @@ document.querySelectorAll(".choice").forEach(button=>{
 
     const answer = document.createElement("div");
     answer.className = "chat-bubble";
-    answer.textContent = "Baik, kami bisa membantu. Pilih kebutuhan Anda pada formulir di bawah agar kami dapat memberikan informasi yang sesuai.";
+    answer.textContent = "Baik, kami siap membantu. Silakan lengkapi formulir pesanan agar kami dapat memberikan informasi yang sesuai.";
     thread.appendChild(answer);
 
     pilihKebutuhan(value);
   });
 });
 
-/* Tombol beli produk digital */
+/* Tombol pembelian produk */
 document.querySelectorAll(".buy-btn").forEach(button=>{
   button.addEventListener("click",()=>{
     const product = button.dataset.product || "";
     const price = button.dataset.price || "";
-    pilihKebutuhan(product, "Saya tertarik dengan " + product + " (" + price + "). Mohon informasi pembelian.");
+
+    pilihKebutuhan(
+      product,
+      "Saya tertarik dengan " + product + " (" + price + "). Mohon informasi pembelian."
+    );
   });
 });
 
-/* Tombol pesan layanan custom */
+/* Tombol layanan custom */
 document.querySelectorAll(".service-btn").forEach(button=>{
   button.addEventListener("click",()=>{
     const service = button.dataset.service || "";
-    pilihKebutuhan(service, "Saya ingin memesan layanan " + service + ". Mohon informasi lebih lanjut.");
+
+    pilihKebutuhan(
+      service,
+      "Saya ingin memesan layanan " + service + ". Mohon informasi lebih lanjut."
+    );
   });
 });
 
-/* Form order */
+/* Form pemesanan */
 const form = document.getElementById("orderForm");
 const formMessage = document.getElementById("formMessage");
 const submitBtn = document.getElementById("submitBtn");
@@ -814,11 +872,11 @@ form.addEventListener("submit",async (event)=>{
   event.preventDefault();
 
   const data = {
-    nama: document.getElementById("nama").value.trim(),
-    kontak: document.getElementById("kontak").value.trim(),
-    minat: document.getElementById("minat").value,
-    detail: document.getElementById("detail").value.trim(),
-    izin: document.getElementById("izin").checked
+    nama:document.getElementById("nama").value.trim(),
+    kontak:document.getElementById("kontak").value.trim(),
+    minat:document.getElementById("minat").value,
+    detail:document.getElementById("detail").value.trim(),
+    izin:document.getElementById("izin").checked
   };
 
   if(!data.izin){
@@ -840,7 +898,7 @@ form.addEventListener("submit",async (event)=>{
     });
 
     if(!response.ok){
-      throw new Error("Pengiriman belum berhasil.");
+      throw new Error("Pengiriman belum berhasil");
     }
 
     formMessage.textContent = "Pesanan berhasil dikirim. Terima kasih telah menghubungi OMNIA.";
@@ -856,7 +914,7 @@ form.addEventListener("submit",async (event)=>{
   }
 });
 
-/* WhatsApp order */
+/* WhatsApp */
 document.getElementById("waBtn").addEventListener("click",()=>{
   const nama = document.getElementById("nama").value.trim();
   const kontak = document.getElementById("kontak").value.trim();
@@ -864,19 +922,22 @@ document.getElementById("waBtn").addEventListener("click",()=>{
   const detail = document.getElementById("detail").value.trim();
 
   if(NOMOR_WA === "62XXXXXXXXXX"){
-    formMessage.textContent = "Nomor WhatsApp OMNIA belum diatur di kode HTML.";
+    formMessage.textContent = "Nomor WhatsApp OMNIA belum diatur. Silakan hubungi melalui Lynk OMNIA.";
     formMessage.className = "form-message error";
     return;
   }
 
-  const pesan =
-    "Halo OMNIA, saya ingin bertanya/memesan.%0A%0A" +
-    "Nama: " + encodeURIComponent(nama || "-") + "%0A" +
-    "Kontak: " + encodeURIComponent(kontak || "-") + "%0A" +
-    "Minat: " + encodeURIComponent(minat || "-") + "%0A" +
-    "Detail: " + encodeURIComponent(detail || "-");
+  const pesan = [
+    "Halo OMNIA, saya ingin bertanya atau memesan.",
+    "",
+    "Nama: " + (nama || "-"),
+    "Kontak: " + (kontak || "-"),
+    "Minat: " + (minat || "-"),
+    "Detail: " + (detail || "-")
+  ].join("\n");
 
-  window.open("https://wa.me/" + NOMOR_WA + "?text=" + pesan,"_blank");
+  const url = "https://wa.me/" + NOMOR_WA + "?text=" + encodeURIComponent(pesan);
+  window.open(url,"_blank");
 });
 </script>
 
