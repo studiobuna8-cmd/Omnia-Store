@@ -6,99 +6,248 @@
 <title>Omnia Store | Omnia Corp</title>
 <meta name="description" content="Omnia Corp: poster UMKM, undangan digital, ilustrasi, dan aplikasi sederhana. Dikerjakan tim AI di bawah pengawasan pemilik.">
 <style>
-:root{--navy:#1B2A4A;--navy2:#26395F;--gold:#C9A96E;--bg:#f6f7fb;--card:#fff;--ink:#1e293b;--mut:#64748b;--line:#e7ebf2;--wa:#128c4a}
+:root{
+ --navy:#1B2A4A;--navy2:#2A3F68;--gold:#C9A96E;--gold2:#E9D9B5;
+ --bg:#F7F8FB;--card:#FFFFFF;--ink:#1E293B;--mut:#64748B;--line:#E6EAF2;
+ --wa:#128C4A;--r:22px;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
-.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
-header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10}
-.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
-.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--gold),#e8d5b0)}
-.logo small{display:block;font-weight:500;font-size:11px;color:#9fb0cc}
-.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:48px 0 60px}
-.hero h1{font-size:clamp(26px,4.5vw,40px);line-height:1.2;margin:0 0 10px;letter-spacing:-.4px}
-.hero p{color:#d6dfef;margin:0;max-width:640px}
-.chat{background:#fff;border-radius:22px;padding:20px;margin-top:-30px;position:relative;box-shadow:0 20px 40px -26px rgba(15,23,42,.4);max-width:720px}
-.bub{background:#f1f4f9;border-radius:16px;padding:12px 14px;margin:0 0 10px;max-width:92%;font-size:15px;white-space:pre-line}
-.bub.me{background:var(--navy);color:#fff;margin-left:auto}
-.bub small{display:block;color:var(--mut);font-size:11px;margin-bottom:2px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chip{border:1px solid #d9e0ea;background:#fff;border-radius:999px;padding:9px 14px;font:inherit;font-size:14px;cursor:pointer}
-.chip:hover{border-color:var(--navy)}
-section{padding:52px 0}
-h2{font-size:24px;margin:0 0 6px;letter-spacing:-.2px}
-.sub{color:var(--mut);margin:0 0 22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column}
-.card h3{margin:0 0 6px;font-size:16px}
-.card p{margin:0 0 12px;color:var(--mut);font-size:14px;flex:1}
-.price{font-weight:700;color:var(--navy);margin-bottom:10px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--navy);color:#fff;border:0;border-radius:12px;padding:11px 16px;font:inherit;font-weight:700;font-size:14px;text-decoration:none;cursor:pointer}
-.btn.gold{background:var(--gold);color:var(--navy)}
-.btn.wa{background:var(--wa)}
-.btn:disabled{opacity:.45;cursor:default}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
-.faq summary{cursor:pointer;font-weight:700}
-.faq p{color:var(--mut);margin:8px 0 0}
-form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;max-width:620px}
-label{display:block;font-size:13px;font-weight:600;margin:12px 0 6px}
-input,textarea{width:100%;border:1px solid #d9e0ea;border-radius:12px;padding:11px 13px;font:inherit}
-textarea{min-height:90px;resize:vertical}
-.pesan{background:#f8fafc;border-radius:12px;padding:10px 12px;font-size:14px;color:var(--mut);margin-bottom:4px}
-.check{display:flex;gap:10px;font-size:13px;color:var(--mut);margin:14px 0}
-.check input{width:auto;margin-top:3px}
-.msg{font-size:14px;margin-top:10px;min-height:20px}
-.ok{color:#15803d}.bad{color:#b91c1c}
-.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-footer{background:var(--navy);color:#cbd5e1;padding:30px 0;font-size:14px}
-footer a{color:var(--gold);text-decoration:none}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:inherit}
+
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(27,42,74,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none}
+.mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--gold),var(--gold2));box-shadow:0 6px 16px -6px rgba(201,169,110,.6)}
+.logo b{display:block;font-size:15px;letter-spacing:.4px}
+.logo small{display:block;font-size:11px;color:#9FB0CC;letter-spacing:.2px}
+.nav{display:flex;gap:4px}
+.nav a{color:#C9D4E8;text-decoration:none;font-size:14px;padding:8px 14px;border-radius:12px;transition:background .2s,color .2s}
+.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav .cta{background:var(--gold);color:var(--navy);font-weight:600}
+.nav .cta:hover{background:var(--gold2)}
+@media(max-width:700px){.nav a:not(.cta){display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:90px 0 110px;background:
+ radial-gradient(900px 500px at 85% -10%,rgba(201,169,110,.22),transparent 60%),
+ radial-gradient(700px 420px at -10% 110%,rgba(42,63,104,.9),transparent 60%),
+ linear-gradient(160deg,#1B2A4A 0%,#22355A 100%);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.3px;color:var(--gold2);background:rgba(255,255,255,.06);border:1px solid rgba(233,217,181,.25);padding:6px 14px;border-radius:999px}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.12;letter-spacing:-.8px;margin:22px 0 18px;font-weight:700}
+.hero h1 span{color:var(--gold2)}
+.hero p{font-size:17px;color:#CBD6EA;max-width:520px;margin:0 0 34px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:14px;font:inherit;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:scale(.98)}
+.btn.gold{background:var(--gold);color:var(--navy);box-shadow:0 12px 24px -14px rgba(201,169,110,.9)}
+.btn.gold:hover{background:var(--gold2)}
+.btn.ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.navy:hover{background:var(--navy2)}
+.btn.wa{background:var(--wa);color:#fff}
+.btn:disabled{opacity:.45;cursor:default;transform:none}
+
+/* hero card (asisten) */
+.assist{background:rgba(255,255,255,.96);color:var(--ink);border-radius:26px;padding:22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.6)}
+.who{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.av{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:grid;place-items:center;color:var(--gold2);font-weight:700;font-size:16px}
+.who b{display:block;font-size:14.5px}
+.who small{color:var(--mut);font-size:12px}
+.chat{display:flex;flex-direction:column;gap:10px;min-height:120px}
+.bub{background:#F1F4F9;border-radius:18px 18px 18px 6px;padding:11px 14px;font-size:14.5px;white-space:pre-line;max-width:94%;animation:pop .35s ease both}
+.bub.me{background:var(--navy);color:#fff;border-radius:18px 18px 6px 18px;margin-left:auto}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:13.5px;cursor:pointer;color:var(--ink);transition:border-color .2s,background .2s}
+.chip:hover{border-color:var(--navy);background:#F7F9FD}
+
+/* trust strip */
+.strip{margin-top:-46px;position:relative;z-index:2}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 20px 40px -28px rgba(15,23,42,.35)}
+.tc .ic{width:42px;height:42px;border-radius:13px;background:#F6F0E2;color:var(--navy);display:grid;place-items:center;font-size:18px;margin-bottom:14px}
+.tc b{display:block;font-size:15.5px;margin-bottom:4px}
+.tc span{color:var(--mut);font-size:14px}
+
+/* sections */
+section{padding:96px 0}
+.kick{font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);font-weight:600}
+h2{font-size:clamp(26px,3.6vw,36px);line-height:1.2;letter-spacing:-.5px;margin:10px 0 12px;color:var(--navy)}
+.lead{color:var(--mut);margin:0 0 42px;max-width:620px;font-size:16px}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 26px 48px -30px rgba(15,23,42,.4);border-color:#D8DEEA}
+.svc .glyph{width:50px;height:50px;border-radius:16px;background:linear-gradient(135deg,#EEF2FA,#F8F3E8);display:grid;place-items:center;color:var(--navy);font-weight:700;margin-bottom:16px;font-size:16px}
+.svc h3{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.svc p{margin:0 0 18px;color:var(--mut);font-size:14px;flex:1}
+.svc .foot{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:16px}
+.price{font-size:13.5px;color:var(--mut)}
+.price b{color:var(--navy);font-weight:600}
+.svc .btn{padding:10px 16px;font-size:13.5px;border-radius:12px}
+.more{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+
+/* how */
+.how{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{padding:26px;border-radius:var(--r);background:var(--bg)}
+.num{width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--gold2);display:grid;place-items:center;font-weight:700;margin-bottom:16px;font-size:15px}
+.step b{display:block;margin-bottom:6px;color:var(--navy);font-size:16px}
+.step span{color:var(--mut);font-size:14.5px}
+
+/* form */
+.formwrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+.side ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.side li{display:flex;gap:10px;color:var(--mut);font-size:14.5px}
+.side li::before{content:"✓";color:var(--gold);font-weight:700}
+form{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:0 30px 60px -40px rgba(15,23,42,.35)}
+label{display:block;font-size:13px;font-weight:600;margin:14px 0 7px;color:var(--navy)}
+input,textarea{width:100%;border:1px solid #D9E0EA;border-radius:14px;padding:13px 15px;font:inherit;background:#FCFDFE;transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(27,42,74,.08);background:#fff}
+textarea{min-height:100px;resize:vertical}
+.pesan{background:#F6F8FB;border:1px dashed #D3DBE8;border-radius:14px;padding:12px 14px;font-size:14px;color:var(--mut);margin-bottom:4px}
+.check{display:flex;gap:11px;font-size:13px;color:var(--mut);margin:18px 0 6px;font-weight:400;line-height:1.5}
+.check input{width:auto;margin-top:3px;accent-color:var(--navy)}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.acts .btn{flex:1}
+.msg{font-size:14px;margin-top:12px;min-height:20px}
+.ok{color:#15803D}.bad{color:#B91C1C}
+
+/* faq */
+.faq{background:var(--bg)}
+.faqwrap{max-width:780px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:12px;transition:box-shadow .2s}
+details[open]{box-shadow:0 16px 30px -24px rgba(15,23,42,.35)}
+summary{cursor:pointer;font-weight:600;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1;font-weight:400}
+details[open] summary::after{content:"–"}
+details p{color:var(--mut);margin:12px 0 0;font-size:14.5px}
+
+/* footer */
+footer{background:var(--navy);color:#B9C6DC;padding:52px 0 36px;font-size:14px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;margin-bottom:28px}
+footer b{color:#fff;display:block;margin-bottom:8px;font-size:15px}
+footer a{color:var(--gold2);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.copy{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:12.5px;color:#8D9DBB}
+
+/* mobile */
+@media(max-width:900px){
+ .hero .wrap,.formwrap{grid-template-columns:1fr}
+ .hero{padding:64px 0 90px}
+ .strip .wrap,.steps{grid-template-columns:1fr}
+ .fg{grid-template-columns:1fr}
+ section{padding:72px 0}
+}
+@media(max-width:520px){
+ .wrap{padding:0 18px}
+ form{padding:22px}
+ .btns .btn{flex:1}
+}
 </style>
 </head>
 <body>
 
 <header>
  <div class="wrap bar">
-  <div class="logo"><i></i><div>OMNIA<small>Corp · Store</small></div></div>
+  <a class="logo" href="#"><div class="mark"></div><div><b>OMNIA</b><small>Corp · Store</small></div></a>
+  <nav class="nav">
+   <a href="#layanan">Layanan</a>
+   <a href="#cara">Cara kerja</a>
+   <a href="#faq">Tanya</a>
+   <a class="cta" href="#pesan">Pesan</a>
+  </nav>
  </div>
 </header>
 
 <div class="hero">
  <div class="wrap">
-  <h1>Butuh poster, undangan, atau alat digital untuk usaha Anda?</h1>
-  <p>Pilih yang Anda butuhkan. Setiap hasil dikerjakan dan diperiksa sebelum sampai ke Anda.</p>
- </div>
-</div>
+  <div>
+   <span class="pill">Produk digital untuk UMKM</span>
+   <h1>Usaha Anda, <span>lebih rapi</span> dengan alat digital yang bisa dipercaya.</h1>
+   <p>Poster, undangan, ilustrasi, dan aplikasi sederhana, dikerjakan tim AI di bawah pengawasan pemilik. Setiap hasil diperiksa sebelum sampai ke Anda.</p>
+   <div class="btns">
+    <a class="btn gold" href="#layanan">Lihat layanan</a>
+    <a class="btn ghost" href="#pesan">Tanya dulu</a>
+   </div>
+  </div>
 
-<div class="wrap">
- <div class="chat" id="chat">
-  <div class="bub"><small>Asisten Omnia Corp (AI)</small>Halo! Saya asisten AI Omnia Corp, dibantu tim dan pemilik. Mau dibuatkan apa hari ini?</div>
-  <div class="chips">
-   <button class="chip" data-k="poster">Poster UMKM</button>
-   <button class="chip" data-k="undangan">Undangan digital</button>
-   <button class="chip" data-k="gambar">Ilustrasi gambar</button>
-   <button class="chip" data-k="aplikasi">Aplikasi sederhana</button>
+  <div class="assist" id="chat">
+   <div class="who">
+    <div class="av">O</div>
+    <div><b>Asisten Omnia Corp</b><small>AI, dibantu tim dan pemilik</small></div>
+   </div>
+   <div class="chat" id="thread">
+    <div class="bub">Halo! Mau dibuatkan apa hari ini?</div>
+   </div>
+   <div class="chips">
+    <button class="chip" data-k="poster">Poster UMKM</button>
+    <button class="chip" data-k="undangan">Undangan digital</button>
+    <button class="chip" data-k="gambar">Ilustrasi</button>
+    <button class="chip" data-k="aplikasi">Aplikasi sederhana</button>
+   </div>
   </div>
  </div>
 </div>
 
-<section id="produk">
+<div class="strip">
  <div class="wrap">
-  <h2>Layanan kami</h2>
-  <p class="sub">Harga ditampilkan setelah ditetapkan. Pesan dulu untuk mendapat penawaran.</p>
+  <div class="tc"><div class="ic">✓</div><b>Diperiksa sebelum tayang</b><span>Setiap hasil dicek sebelum diserahkan kepada Anda.</span></div>
+  <div class="tc"><div class="ic">◎</div><b>Harga dan syarat jelas</b><span>Tercantum apa adanya, tanpa biaya tersembunyi.</span></div>
+  <div class="tc"><div class="ic">◈</div><b>Pemilik tetap memegang keputusan</b><span>Tim AI bekerja, keputusan penting tetap di tangan pemilik.</span></div>
+ </div>
+</div>
+
+<section id="layanan">
+ <div class="wrap">
+  <div class="kick">Layanan</div>
+  <h2>Pilih yang paling sesuai usaha Anda</h2>
+  <p class="lead">Harga ditampilkan setelah ditetapkan. Pesan dulu, dan kami kirim penawaran sesuai kebutuhan.</p>
   <div class="grid">
-   <div class="card"><h3>Poster UMKM</h3><p>Poster promosi untuk usaha kecil, disesuaikan dengan usaha Anda.</p><div class="price">Harga menyusul</div><button class="btn" data-k="poster">Pesan</button></div>
-   <div class="card"><h3>Undangan digital</h3><p>Undangan dengan desain sesuai tema. Data hanya dipakai untuk pesanan ini.</p><div class="price">Harga menyusul</div><button class="btn" data-k="undangan">Pesan</button></div>
-   <div class="card"><h3>Ilustrasi gambar</h3><p>Ilustrasi custom untuk konten usaha Anda, diperiksa sebelum diserahkan.</p><div class="price">Harga menyusul</div><button class="btn" data-k="gambar">Pesan</button></div>
-   <div class="card"><h3>Aplikasi sederhana</h3><p>Aplikasi atau halaman kecil sesuai kebutuhan. Ruang lingkup disepakati dulu.</p><div class="price">Harga menyusul</div><button class="btn" data-k="aplikasi">Pesan</button></div>
+   <div class="svc"><div class="glyph">PU</div><h3>Poster UMKM</h3><p>Poster promosi untuk usaha kecil, disesuaikan dengan produk dan suasana usaha Anda.</p><div class="foot"><span class="price"><b>Harga menyusul</b></span><button class="btn navy" data-k="poster">Pesan</button></div></div>
+   <div class="svc"><div class="glyph">UD</div><h3>Undangan digital</h3><p>Undangan dengan desain sesuai tema. Data Anda hanya dipakai untuk pesanan ini.</p><div class="foot"><span class="price"><b>Harga menyusul</b></span><button class="btn navy" data-k="undangan">Pesan</button></div></div>
+   <div class="svc"><div class="glyph">IL</div><h3>Ilustrasi gambar</h3><p>Ilustrasi custom untuk konten usaha Anda, diperiksa sebelum diserahkan.</p><div class="foot"><span class="price"><b>Harga menyusul</b></span><button class="btn navy" data-k="gambar">Pesan</button></div></div>
+   <div class="svc"><div class="glyph">AP</div><h3>Aplikasi sederhana</h3><p>Aplikasi atau halaman kecil sesuai kebutuhan. Ruang lingkupnya disepakati dulu.</p><div class="foot"><span class="price"><b>Harga menyusul</b></span><button class="btn navy" data-k="aplikasi">Pesan</button></div></div>
   </div>
-  <div class="grid" id="grid" style="margin-top:16px"></div>
+  <div class="more" id="grid"></div>
  </div>
 </section>
 
-<section id="pesan" style="padding-top:0">
+<section id="cara" class="how">
  <div class="wrap">
-  <h2>Pesan sekarang</h2>
-  <p class="sub">Tulis kebutuhan Anda. Kami hubungi kembali sesuai izin yang Anda berikan.</p>
+  <div class="kick">Cara kerja</div>
+  <h2>Tiga langkah, tanpa ribet</h2>
+  <p class="lead">Dari pilihan sampai hasil di tangan Anda.</p>
+  <div class="steps">
+   <div class="step"><div class="num">1</div><b>Pilih layanan</b><span>Ceritakan kebutuhan usaha Anda secara singkat.</span></div>
+   <div class="step"><div class="num">2</div><b>Kami kerjakan</b><span>Hasil dibuat lalu diperiksa sebelum diserahkan kepada Anda.</span></div>
+   <div class="step"><div class="num">3</div><b>Anda terima</b><span>Hasil dikirim sesuai panduan yang tertulis di layanan itu.</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="pesan">
+ <div class="wrap formwrap">
+  <div class="side">
+   <div class="kick">Pesan sekarang</div>
+   <h2>Ceritakan kebutuhan Anda</h2>
+   <p class="lead" style="margin-bottom:0">Kami hubungi kembali sesuai izin yang Anda berikan. Data Anda tidak dipakai untuk keperluan lain.</p>
+   <ul>
+    <li>Hasil diperiksa sebelum diserahkan</li>
+    <li>Harga disampaikan jelas sebelum dikerjakan</li>
+    <li>Anda bisa membatalkan kapan saja</li>
+   </ul>
+  </div>
   <form id="form">
    <div class="pesan" id="pilihan">Belum memilih layanan. Pilih salah satu di atas.</div>
    <label for="nama">Nama</label>
@@ -109,7 +258,7 @@ footer a{color:var(--gold);text-decoration:none}
    <textarea id="minat" maxlength="300" placeholder="Contoh: poster promo untuk toko kelontong, warna merah dan kuning"></textarea>
    <label class="check"><input type="checkbox" id="izin"> Saya setuju dihubungi Omnia Corp tentang pesanan ini. Data hanya dipakai untuk keperluan itu.</label>
    <div class="acts">
-    <button class="btn gold" type="submit" id="kirim">Kirim pesanan</button>
+    <button class="btn navy" type="submit" id="kirim">Kirim pesanan</button>
     <a class="btn wa" id="wa" href="#" target="_blank" rel="noopener">Chat WhatsApp</a>
    </div>
    <div class="msg" id="msg"></div>
@@ -118,23 +267,28 @@ footer a{color:var(--gold);text-decoration:none}
 </section>
 
 <section class="faq" id="faq">
- <div class="wrap" style="max-width:760px">
-  <h2>Pertanyaan umum</h2>
-  <p class="sub">Jawaban singkat untuk pertanyaan yang sering ditanyakan.</p>
+ <div class="wrap faqwrap">
+  <div class="kick">Pertanyaan umum</div>
+  <h2>Yang sering ditanyakan</h2>
+  <p class="lead">Jawaban singkat. Pertanyaan lain bisa Anda kirim lewat formulir.</p>
   <div id="faqList"><details><summary>Apa itu Omnia Corp?</summary><p>Omnia Corp membuat produk digital dan jasa desain untuk UMKM Indonesia. Dikerjakan tim AI di bawah pengawasan pemilik.</p></details></div>
  </div>
 </section>
 
 <footer>
  <div class="wrap">
-  <div>Omnia Corp · <a href="https://www.instagram.com/omnia.corp_" target="_blank" rel="noopener">Instagram</a> · <a href="https://lynk.id/omnia_corp" target="_blank" rel="noopener">Toko di Lynk</a></div>
-  <div style="margin-top:8px;font-size:12px;color:#8ea0c0">Dikerjakan tim AI di bawah pengawasan pemilik. Harga dan syarat tercantum di setiap layanan.</div>
+  <div class="fg">
+   <div><b>Omnia Corp</b>Produk digital dan jasa desain untuk UMKM Indonesia. Dikerjakan tim AI di bawah pengawasan pemilik.</div>
+   <div><b>Ikuti kami</b><a href="https://www.instagram.com/omnia.corp_" target="_blank" rel="noopener">Instagram @omnia.corp_</a></div>
+   <div><b>Belanja</b><a href="https://lynk.id/omnia_corp" target="_blank" rel="noopener">Toko di Lynk</a></div>
+  </div>
+  <div class="copy">© Omnia Corp. Harga dan syarat dapat berubah dan selalu tercantum di setiap layanan.</div>
  </div>
 </footer>
 
 <script>
 const API="https://ianvkkefykbhvmxummye.supabase.co/functions/v1/toko";
-const WA="6283823102360";
+const WA="62XXXXXXXXXX";
 const LAY={
  poster:{nama:"Poster UMKM",tanya:"Nama dan jenis usaha Anda?\nTulisan utama yang ingin tampil?\nGaya yang disukai: sederhana, ceria, atau elegan?"},
  undangan:{nama:"Undangan digital",tanya:"Nama acara dan tanggalnya?\nTema dan warna yang diinginkan?\nData yang tampil di undangan (hanya untuk pesanan ini)."},
@@ -149,14 +303,14 @@ function bubble(t,me){
  const d=document.createElement("div");
  d.className="bub"+(me?" me":"");
  d.textContent=t;
- document.getElementById("chat").appendChild(d);
+ document.getElementById("thread").appendChild(d);
 }
 
 function pilih(k){
  const L=LAY[k]; if(!L) return;
  PILIH=L.nama;
  bubble(L.nama,true);
- bubble("Baik. Untuk "+L.nama+", tolong jawab di kotak pesanan di bawah ini:\n"+L.tanya);
+ bubble("Baik. Untuk "+L.nama+", tolong jawab di kolom pesanan di bawah:\n"+L.tanya);
  document.getElementById("pilihan").textContent="Layanan: "+L.nama;
  document.getElementById("minat").placeholder=L.tanya.split("\n")[0];
  setWA();
@@ -177,11 +331,10 @@ async function muatToko(){
   const j=await r.json();
   if(Array.isArray(j.produk)&&j.produk.length){
    document.getElementById("grid").innerHTML=j.produk.map(p=>`
-    <div class="card">
+    <div class="svc">
      <h3>${esc(p.name)}</h3>
      <p>${esc(p.description||"")}</p>
-     <div class="price">${rp(p.price)}</div>
-     ${p.buy_link?`<a class="btn" href="${esc(p.buy_link)}" target="_blank" rel="noopener">Beli di Lynk</a>`:""}
+     <div class="foot"><span class="price"><b>${rp(p.price)}</b></span>${p.buy_link?`<a class="btn navy" href="${esc(p.buy_link)}" target="_blank" rel="noopener">Beli di Lynk</a>`:""}</div>
     </div>`).join("");
   }
   if(Array.isArray(j.faq)&&j.faq.length){
@@ -206,7 +359,7 @@ document.getElementById("form").addEventListener("submit",async e=>{
   const j=await r.json().catch(()=>({}));
   if(!r.ok) throw new Error(j.error||"Gagal mengirim");
   msg.className="msg ok";
-  msg.textContent="Terima kasih. Pesanan Anda sudah kami terima. Kami hubungi sesuai izin yang Anda berikan.";
+  msg.textContent="Terima kasih. Pesanan Anda sudah kami terima dan akan dihubungi sesuai izin yang Anda berikan.";
   e.target.reset(); PILIH=null; setWA();
   document.getElementById("pilihan").textContent="Belum memilih layanan. Pilih salah satu di atas.";
  }catch(err){
@@ -219,4 +372,4 @@ document.getElementById("form").addEventListener("submit",async e=>{
 muatToko();
 </script>
 </body>
-  </html>
+</html>
