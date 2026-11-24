@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Omnia Store | Omnia Corp</title>
+<meta name="description" content="Omnia Corp: poster UMKM, undangan digital, ilustrasi, dan aplikasi sederhana. Dikerjakan tim AI di bawah pengawasan pemilik.">
+<style>
+:root{--navy:#1B2A4A;--navy2:#26395F;--gold:#C9A96E;--bg:#f6f7fb;--card:#fff;--ink:#1e293b;--mut:#64748b;--line:#e7ebf2;--wa:#128c4a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--gold),#e8d5b0)}
+.logo small{display:block;font-weight:500;font-size:11px;color:#9fb0cc}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:48px 0 60px}
+.hero h1{font-size:clamp(26px,4.5vw,40px);line-height:1.2;margin:0 0 10px;letter-spacing:-.4px}
+.hero p{color:#d6dfef;margin:0;max-width:640px}
+.chat{background:#fff;border-radius:22px;padding:20px;margin-top:-30px;position:relative;box-shadow:0 20px 40px -26px rgba(15,23,42,.4);max-width:720px}
+.bub{background:#f1f4f9;border-radius:16px;padding:12px 14px;margin:0 0 10px;max-width:92%;font-size:15px;white-space:pre-line}
+.bub.me{background:var(--navy);color:#fff;margin-left:auto}
+.bub small{display:block;color:var(--mut);font-size:11px;margin-bottom:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{border:1px solid #d9e0ea;background:#fff;border-radius:999px;padding:9px 14px;font:inherit;font-size:14px;cursor:pointer}
+.chip:hover{border-color:var(--navy)}
+section{padding:52px 0}
+h2{font-size:24px;margin:0 0 6px;letter-spacing:-.2px}
+.sub{color:var(--mut);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column}
+.card h3{margin:0 0 6px;font-size:16px}
+.card p{margin:0 0 12px;color:var(--mut);font-size:14px;flex:1}
+.price{font-weight:700;color:var(--navy);margin-bottom:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--navy);color:#fff;border:0;border-radius:12px;padding:11px 16px;font:inherit;font-weight:700;font-size:14px;text-decoration:none;cursor:pointer}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.wa{background:var(--wa)}
+.btn:disabled{opacity:.45;cursor:default}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700}
+.faq p{color:var(--mut);margin:8px 0 0}
+form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;max-width:620px}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 6px}
+input,textarea{width:100%;border:1px solid #d9e0ea;border-radius:12px;padding:11px 13px;font:inherit}
+textarea{min-height:90px;resize:vertical}
+.pesan{background:#f8fafc;border-radius:12px;padding:10px 12px;font-size:14px;color:var(--mut);margin-bottom:4px}
+.check{display:flex;gap:10px;font-size:13px;color:var(--mut);margin:14px 0}
+.check input{width:auto;margin-top:3px}
+.msg{font-size:14px;margin-top:10px;min-height:20px}
+.ok{color:#15803d}.bad{color:#b91c1c}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+footer{background:var(--navy);color:#cbd5e1;padding:30px 0;font-size:14px}
+footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap bar">
+  <div class="logo"><i></i><div>OMNIA<small>Corp · Store</small></div></div>
+ </div>
+</header>
+
+<div class="hero">
+ <div class="wrap">
+  <h1>Butuh poster, undangan, atau alat digital untuk usaha Anda?</h1>
+  <p>Pilih yang Anda butuhkan. Setiap hasil dikerjakan dan diperiksa sebelum sampai ke Anda.</p>
+ </div>
+</div>
+
+<div class="wrap">
+ <div class="chat" id="chat">
+  <div class="bub"><small>Asisten Omnia Corp (AI)</small>Halo! Saya asisten AI Omnia Corp, dibantu tim dan pemilik. Mau dibuatkan apa hari ini?</div>
+  <div class="chips">
+   <button class="chip" data-k="poster">Poster UMKM</button>
+   <button class="chip" data-k="undangan">Undangan digital</button>
+   <button class="chip" data-k="gambar">Ilustrasi gambar</button>
+   <button class="chip" data-k="aplikasi">Aplikasi sederhana</button>
+  </div>
+ </div>
+</div>
+
+<section id="produk">
+ <div class="wrap">
+  <h2>Layanan kami</h2>
+  <p class="sub">Harga ditampilkan setelah ditetapkan. Pesan dulu untuk mendapat penawaran.</p>
+  <div class="grid">
+   <div class="card"><h3>Poster UMKM</h3><p>Poster promosi untuk usaha kecil, disesuaikan dengan usaha Anda.</p><div class="price">Harga menyusul</div><button class="btn" data-k="poster">Pesan</button></div>
+   <div class="card"><h3>Undangan digital</h3><p>Undangan dengan desain sesuai tema. Data hanya dipakai untuk pesanan ini.</p><div class="price">Harga menyusul</div><button class="btn" data-k="undangan">Pesan</button></div>
+   <div class="card"><h3>Ilustrasi gambar</h3><p>Ilustrasi custom untuk konten usaha Anda, diperiksa sebelum diserahkan.</p><div class="price">Harga menyusul</div><button class="btn" data-k="gambar">Pesan</button></div>
+   <div class="card"><h3>Aplikasi sederhana</h3><p>Aplikasi atau halaman kecil sesuai kebutuhan. Ruang lingkup disepakati dulu.</p><div class="price">Harga menyusul</div><button class="btn" data-k="aplikasi">Pesan</button></div>
+  </div>
+  <div class="grid" id="grid" style="margin-top:16px"></div>
+ </div>
+</section>
+
+<section id="pesan" style="padding-top:0">
+ <div class="wrap">
+  <h2>Pesan sekarang</h2>
+  <p class="sub">Tulis kebutuhan Anda. Kami hubungi kembali sesuai izin yang Anda berikan.</p>
+  <form id="form">
+   <div class="pesan" id="pilihan">Belum memilih layanan. Pilih salah satu di atas.</div>
+   <label for="nama">Nama</label>
+   <input id="nama" maxlength="80" placeholder="Nama Anda">
+   <label for="kontak">Nomor WhatsApp atau email</label>
+   <input id="kontak" maxlength="80" placeholder="Contoh: 0812xxxxxxx">
+   <label for="minat">Ceritakan kebutuhan Anda</label>
+   <textarea id="minat" maxlength="300" placeholder="Contoh: poster promo untuk toko kelontong, warna merah dan kuning"></textarea>
+   <label class="check"><input type="checkbox" id="izin"> Saya setuju dihubungi Omnia Corp tentang pesanan ini. Data hanya dipakai untuk keperluan itu.</label>
+   <div class="acts">
+    <button class="btn gold" type="submit" id="kirim">Kirim pesanan</button>
+    <a class="btn wa" id="wa" href="#" target="_blank" rel="noopener">Chat WhatsApp</a>
+   </div>
+   <div class="msg" id="msg"></div>
+  </form>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="wrap" style="max-width:760px">
+  <h2>Pertanyaan umum</h2>
+  <p class="sub">Jawaban singkat untuk pertanyaan yang sering ditanyakan.</p>
+  <div id="faqList"><details><summary>Apa itu Omnia Corp?</summary><p>Omnia Corp membuat produk digital dan jasa desain untuk UMKM Indonesia. Dikerjakan tim AI di bawah pengawasan pemilik.</p></details></div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div>Omnia Corp · <a href="https://www.instagram.com/omnia.corp_" target="_blank" rel="noopener">Instagram</a> · <a href="https://lynk.id/omnia_corp" target="_blank" rel="noopener">Toko di Lynk</a></div>
+  <div style="margin-top:8px;font-size:12px;color:#8ea0c0">Dikerjakan tim AI di bawah pengawasan pemilik. Harga dan syarat tercantum di setiap layanan.</div>
+ </div>
+</footer>
+
+<script>
+const API="https://ianvkkefykbhvmxummye.supabase.co/functions/v1/toko";
+const WA="6283823102360";
+const LAY={
+ poster:{nama:"Poster UMKM",tanya:"Nama dan jenis usaha Anda?\nTulisan utama yang ingin tampil?\nGaya yang disukai: sederhana, ceria, atau elegan?"},
+ undangan:{nama:"Undangan digital",tanya:"Nama acara dan tanggalnya?\nTema dan warna yang diinginkan?\nData yang tampil di undangan (hanya untuk pesanan ini)."},
+ gambar:{nama:"Ilustrasi gambar",tanya:"Untuk keperluan apa gambarnya?\nObjek atau suasana yang diinginkan?\nUkuran dan format yang dibutuhkan?"},
+ aplikasi:{nama:"Aplikasi sederhana",tanya:"Apa fungsi utama aplikasinya?\nUntuk siapa aplikasi itu dipakai?\nAda contoh tampilan yang disukai?"}
+};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const rp=v=>v==null?"Harga menyusul":"Rp "+Number(v).toLocaleString("id-ID");
+let PILIH=null;
+
+function bubble(t,me){
+ const d=document.createElement("div");
+ d.className="bub"+(me?" me":"");
+ d.textContent=t;
+ document.getElementById("chat").appendChild(d);
+}
+
+function pilih(k){
+ const L=LAY[k]; if(!L) return;
+ PILIH=L.nama;
+ bubble(L.nama,true);
+ bubble("Baik. Untuk "+L.nama+", tolong jawab di kotak pesanan di bawah ini:\n"+L.tanya);
+ document.getElementById("pilihan").textContent="Layanan: "+L.nama;
+ document.getElementById("minat").placeholder=L.tanya.split("\n")[0];
+ setWA();
+ document.getElementById("pesan").scrollIntoView({behavior:"smooth"});
+}
+
+function setWA(){
+ const t="Halo Omnia Corp, saya ingin pesan: "+(PILIH||"layanan");
+ document.getElementById("wa").href="https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+}
+
+document.querySelectorAll("[data-k]").forEach(b=>b.addEventListener("click",()=>pilih(b.dataset.k)));
+setWA();
+
+async function muatToko(){
+ try{
+  const r=await fetch(API);
+  const j=await r.json();
+  if(Array.isArray(j.produk)&&j.produk.length){
+   document.getElementById("grid").innerHTML=j.produk.map(p=>`
+    <div class="card">
+     <h3>${esc(p.name)}</h3>
+     <p>${esc(p.description||"")}</p>
+     <div class="price">${rp(p.price)}</div>
+     ${p.buy_link?`<a class="btn" href="${esc(p.buy_link)}" target="_blank" rel="noopener">Beli di Lynk</a>`:""}
+    </div>`).join("");
+  }
+  if(Array.isArray(j.faq)&&j.faq.length){
+   document.getElementById("faqList").innerHTML=j.faq.map(f=>`<details><summary>${esc(f.pertanyaan)}</summary><p>${esc(f.jawaban)}</p></details>`).join("");
+  }
+ }catch(e){}
+}
+
+document.getElementById("form").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const msg=document.getElementById("msg"), btn=document.getElementById("kirim");
+ const minat=(PILIH?"Layanan: "+PILIH+" | ":"")+document.getElementById("minat").value.trim();
+ btn.disabled=true; msg.className="msg"; msg.textContent="Mengirim...";
+ try{
+  const r=await fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},
+   body:JSON.stringify({
+    nama:document.getElementById("nama").value.trim(),
+    kontak:document.getElementById("kontak").value.trim(),
+    minat:minat,
+    izin:document.getElementById("izin").checked
+   })});
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok) throw new Error(j.error||"Gagal mengirim");
+  msg.className="msg ok";
+  msg.textContent="Terima kasih. Pesanan Anda sudah kami terima. Kami hubungi sesuai izin yang Anda berikan.";
+  e.target.reset(); PILIH=null; setWA();
+  document.getElementById("pilihan").textContent="Belum memilih layanan. Pilih salah satu di atas.";
+ }catch(err){
+  msg.className="msg bad";
+  msg.textContent="Maaf, belum berhasil: "+err.message;
+ }
+ btn.disabled=false;
+});
+
+muatToko();
+</script>
+</body>
+  </html>
