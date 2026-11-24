@@ -1,945 +1,529 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1B2A4A">
-<title>OMNIA Store | Digital Products & Creative Services</title>
-<meta name="description" content="OMNIA Store menyediakan produk digital, template bisnis, desain kreatif, tools dan solusi digital praktis.">
-
+<meta name="theme-color" content="#172640">
+<title>OMNIA Store — Produk Digital & Creative Studio</title>
+<meta name="description" content="Produk digital, template, desain kreatif, dan solusi praktis dari OMNIA Store.">
+<link rel="icon" href="IMG_20261117_181320.png">
 <style>
 :root{
-  --navy:#1B2A4A;
-  --navy2:#2B4168;
-  --gold:#C9A96E;
-  --gold-light:#E9D9B5;
-  --bg:#F7F8FA;
-  --white:#fff;
-  --ink:#202A3B;
-  --muted:#738096;
-  --line:#E6EAF0;
-  --green:#16834A;
-  --radius:22px;
+  --navy:#172640; --gold:#c6a56b; --gold-dark:#a1834b;
+  --cream:#f6f4ef; --ink:#222c3d; --muted:#7c8594; --line:#e9e8e4;
+  --green:#18794a; --shadow:0 12px 36px rgba(25,38,58,.08);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-button,input,textarea,select{font:inherit}
-a{color:inherit}
-.wrap{max-width:1160px;margin:auto;padding:0 24px}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.65;overflow-x:hidden}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.section{padding:84px 0}
+.section-head{max-width:680px;margin-bottom:35px}
+.kicker{color:var(--gold-dark);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.section-head h2{font-size:clamp(26px,4vw,38px);color:var(--navy);line-height:1.2;letter-spacing:-1px;margin:12px 0}
+.section-head p{font-size:14px;color:var(--muted);margin:0}
 
 /* HEADER */
-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(27,42,74,.97);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,.08)
-}
-.bar{
-  height:74px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between
-}
-.logo{
-  display:flex;align-items:center;gap:12px;
-  text-decoration:none;color:#fff
-}
-.logo-image{
-  width:46px;height:46px;
-  object-fit:contain;display:block;flex-shrink:0
-}
-.logo-text b{
-  display:block;font-size:15px;letter-spacing:2.5px;font-weight:700
-}
-.logo-text small{
-  display:block;font-size:10px;letter-spacing:1.4px;color:#AABBD6
-}
-.nav{display:flex;align-items:center;gap:5px}
-.nav a{
-  color:#D3DDEE;text-decoration:none;font-size:13px;
-  padding:9px 13px;border-radius:12px;transition:.2s
-}
-.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
-.nav .nav-cta{background:var(--gold);color:var(--navy);font-weight:700}
+.header{background:rgba(255,255,255,.96);position:sticky;top:0;z-index:100;border-bottom:1px solid #e9e9e6;backdrop-filter:blur(12px)}
+.header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:44px;height:44px;object-fit:contain;border-radius:8px}
+.brand-name{font-size:14px;font-weight:800;letter-spacing:2.5px;color:var(--navy)}
+.brand-sub{font-size:8px;letter-spacing:1.3px;color:#9299a6}
+.nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.nav a{font-size:13px;color:#596477;transition:.2s}
+.nav a:hover{color:var(--gold-dark)}
+.nav .nav-order{background:var(--navy);color:#fff;padding:10px 16px;border-radius:9px}
+.nav .nav-order:hover{color:#fff;opacity:.9}
+
+/* BUTTON */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:13px 20px;border-radius:11px;border:1px solid transparent;font-size:14px;font-weight:700;transition:.2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-light{border-color:#d9dee7;color:var(--navy);background:transparent}
+.btn-sm{padding:10px 14px;font-size:13px}
+.btn-block{width:100%}
 
 /* HERO */
-.hero{
-  color:white;padding:86px 0 100px;overflow:hidden;
-  background:
-    radial-gradient(ellipse at 85% 10%,rgba(201,169,110,.17),transparent 42%),
-    radial-gradient(ellipse at 0% 100%,rgba(54,83,130,.4),transparent 48%),
-    linear-gradient(145deg,#182641,#22375D)
-}
-.hero-inner{
-  display:grid;grid-template-columns:1.1fr .9fr;
-  gap:54px;align-items:center
-}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:7px 13px;border-radius:100px;
-  color:var(--gold-light);font-size:12px;
-  border:1px solid rgba(233,217,181,.25);
-  background:rgba(255,255,255,.05)
-}
-.eyebrow:before{
-  content:"";width:6px;height:6px;
-  background:var(--gold);border-radius:50%
-}
-.hero h1{
-  font-size:clamp(36px,5.3vw,58px);
-  line-height:1.12;letter-spacing:-1.8px;
-  margin:24px 0 20px;font-weight:700
-}
-.hero h1 span{color:var(--gold-light)}
-.hero-copy{color:#C8D4E7;max-width:550px;font-size:16px;margin-bottom:30px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  border:0;text-decoration:none;cursor:pointer;
-  border-radius:13px;padding:13px 21px;
-  font-size:14px;font-weight:600;
-  transition:transform .18s,background .2s,border .2s
-}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:scale(.98)}
-.btn-gold{background:var(--gold);color:var(--navy)}
-.btn-gold:hover{background:var(--gold-light)}
-.btn-outline{background:transparent;color:white;border:1px solid rgba(255,255,255,.2)}
-.btn-outline:hover{background:rgba(255,255,255,.08)}
-.btn-navy{background:var(--navy);color:white}
-.btn-navy:hover{background:var(--navy2)}
-.btn-wa{background:var(--green);color:white}
-.btn:disabled{opacity:.6;cursor:wait;transform:none}
-
-/* HERO ASSISTANT */
-.hero-panel{
-  background:#fff;color:var(--ink);padding:25px;border-radius:26px;
-  box-shadow:0 28px 80px -40px rgba(0,0,0,.5);
-  border:1px solid rgba(255,255,255,.55)
-}
-.panel-top{display:flex;align-items:center;gap:13px;margin-bottom:18px}
-.panel-icon{
-  width:46px;height:46px;border-radius:15px;background:var(--navy);
-  display:grid;place-items:center;color:var(--gold);font-size:17px;font-weight:700;
-  overflow:hidden
-}
-.panel-icon img{width:100%;height:100%;object-fit:contain}
-.panel-top b{display:block;font-size:14px}
-.panel-top small{display:block;color:var(--muted);font-size:11px}
-.chat-preview{display:grid;gap:10px}
-.chat-bubble{
-  background:#F1F4F8;padding:12px 15px;
-  border-radius:16px 16px 16px 5px;font-size:13.5px;color:#455268
-}
-.chat-bubble.reply{
-  background:var(--navy);color:white;
-  border-radius:16px 16px 5px 16px;margin-left:25px
-}
-.chat-choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
-.choice{
-  border:1px solid var(--line);background:#fff;color:var(--ink);
-  border-radius:99px;padding:8px 12px;font-size:12px;cursor:pointer;transition:.2s
-}
-.choice:hover{border-color:var(--gold);background:#FBF8F1}
+.hero{background:var(--cream);overflow:hidden}
+.hero-inner{min-height:540px;padding:70px 0;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;color:#8a7045;background:#eee7d9;border-radius:50px;padding:7px 13px;font-size:11px;font-weight:700}
+.hero-badge span{width:6px;height:6px;background:var(--gold);border-radius:50%}
+.hero h1{font-size:clamp(40px,5.6vw,64px);line-height:1.06;letter-spacing:-2px;color:var(--navy);margin:22px 0 18px;max-width:600px}
+.hero h1 em{font-style:normal;color:#b08d52}
+.hero-text{font-size:16px;color:#5f6a7c;max-width:500px;margin:0 0 26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{margin-top:26px;color:#8a92a0;font-size:13px}
+.hero-visual{display:flex;justify-content:center;align-items:center}
+.visual-frame{width:100%;max-width:440px;aspect-ratio:1/1;border-radius:26px;background:var(--navy);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:30px}
+.visual-frame:before{content:"";position:absolute;width:360px;height:360px;border:1px solid #c6a56b3a;border-radius:50%;top:-110px;right:-140px}
+.visual-frame:after{content:"";position:absolute;width:260px;height:260px;border:1px solid #c6a56b27;border-radius:50%;bottom:-100px;left:-110px}
+.visual-logo{position:relative;z-index:2;width:72%;max-width:260px;height:auto;object-fit:contain}
 
 /* TRUST */
-.trust{margin-top:-42px;position:relative;z-index:2}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.trust-card{
-  background:white;border:1px solid var(--line);border-radius:20px;
-  padding:22px;box-shadow:0 15px 35px -28px rgba(15,23,42,.35)
-}
-.trust-icon{
-  width:40px;height:40px;border-radius:13px;background:#F5F0E5;
-  display:grid;place-items:center;color:var(--navy);font-size:17px;margin-bottom:12px
-}
-.trust-card b{display:block;font-size:14px;margin-bottom:4px}
-.trust-card span{display:block;font-size:12.5px;color:var(--muted)}
-
-/* SECTIONS */
-section{padding:82px 0}
-.section-label{
-  font-size:11px;letter-spacing:1.8px;
-  text-transform:uppercase;color:#A17D43;font-weight:700
-}
-h2{
-  color:var(--navy);font-size:clamp(27px,3.6vw,38px);
-  line-height:1.2;letter-spacing:-.7px;margin:11px 0
-}
-.section-lead{max-width:640px;color:var(--muted);font-size:15px;margin:0 0 34px}
+.trust-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;padding:24px 0}
+.trust-strip{background:#fff;border-bottom:1px solid var(--line)}
+.trust-item{display:flex;align-items:center;gap:12px}
+.trust-mark{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:#f5f1e8;color:#9e7e49;font-size:13px;font-weight:800;flex-shrink:0}
+.trust-item b{font-size:14px;color:var(--navy);display:block}
+.trust-item small{font-size:12px;color:var(--muted);display:block}
 
 /* PRODUCTS */
-.products{background:white;border-top:1px solid var(--line)}
-.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.product-card{
-  border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white;
-  display:flex;flex-direction:column;transition:.22s
-}
-.product-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px -30px rgba(15,23,42,.4)}
-.product-cover{
-  min-height:150px;display:grid;place-items:center;text-align:center;padding:20px;
-  background:linear-gradient(145deg,#1B2A4A,#314B77);color:#E9D9B5;
-  position:relative;overflow:hidden
-}
-.product-cover:after{
-  content:"";position:absolute;width:150px;height:150px;
-  border:1px solid rgba(201,169,110,.18);border-radius:50%;
-  right:-55px;bottom:-80px
-}
-.product-cover:before{
-  content:"";position:absolute;width:90px;height:90px;
-  border:1px solid rgba(201,169,110,.12);border-radius:50%;
-  right:-25px;bottom:-45px
-}
-.product-cover span{position:relative;z-index:1;font-size:12px;letter-spacing:2px;font-weight:700}
-.cover-2{background:linear-gradient(145deg,#344A6F,#1B2A4A)}
-.cover-3{background:linear-gradient(145deg,#6D7F99,#354B70)}
-.cover-4{background:linear-gradient(145deg,#26354F,#4D5E7A)}
-.cover-5{background:linear-gradient(145deg,#8C7958,#4C493D)}
-.cover-6{background:linear-gradient(145deg,#384C6A,#1C2A46)}
-.cover-7{background:linear-gradient(145deg,#4A607C,#273852)}
-.cover-8{background:linear-gradient(145deg,#7A6B51,#293B5C)}
-.product-info{padding:18px;display:flex;flex-direction:column;flex:1}
-.product-tag{
-  font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#9B7A43;
-  background:#F7F1E5;padding:5px 9px;border-radius:99px;
-  width:fit-content;margin-bottom:9px
-}
-.product-info h3{font-size:15px;color:var(--navy);margin:0 0 8px;line-height:1.4}
-.product-info p{font-size:12.5px;color:var(--muted);margin:0 0 17px;flex:1}
-.product-bottom{
-  border-top:1px solid var(--line);padding-top:13px;
-  display:flex;align-items:center;justify-content:space-between;gap:8px
-}
-.product-price{font-size:13px;font-weight:700;color:var(--navy)}
-.product-bottom button{font-size:12px;padding:9px 12px;border-radius:10px}
+.product-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;margin-bottom:24px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filter{border:1px solid var(--line);background:#fff;color:#6c7687;padding:9px 15px;border-radius:50px;font-size:13px}
+.filter.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.search{border:1px solid var(--line);background:#fafafa;border-radius:10px;padding:11px 14px;font-size:14px;width:240px;max-width:100%;outline:none}
+.search:focus{border-color:var(--gold)}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.product-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;min-width:0}
+.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.product-card[hidden]{display:none}
+.product-art{min-height:165px;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden;text-align:center}
+.product-art:before{content:"";width:150px;height:150px;border-radius:50%;border:1px solid #c6a56b35;position:absolute;top:-50px;right:-40px}
+.art-label{font-size:10px;letter-spacing:2px;color:#e0c58f;position:relative;z-index:1}
+.art-title{display:block;color:#fff;font-family:Georgia,serif;font-size:21px;margin-top:8px;line-height:1.2;position:relative;z-index:1}
+.product-content{padding:16px;display:flex;flex-direction:column;flex:1}
+.product-category{font-size:10px;color:var(--gold-dark);letter-spacing:1px;text-transform:uppercase;font-weight:700}
+.product-content h3{font-size:16px;color:var(--navy);line-height:1.35;margin:7px 0}
+.product-content p{font-size:13px;color:var(--muted);margin:0 0 14px;flex:1}
+.product-buy{border-top:1px solid var(--line);padding-top:12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.price{font-size:15px;font-weight:800;color:var(--navy)}
+.no-result{display:none;text-align:center;color:var(--muted);padding:35px;font-size:14px}
+.no-result.show{display:block}
 
 /* SERVICES */
-.services{background:var(--bg)}
-.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
-.service-card{
-  border:1px solid var(--line);border-radius:20px;background:white;padding:22px;
-  display:flex;flex-direction:column;transition:.22s
-}
-.service-card:hover{transform:translateY(-3px);box-shadow:0 22px 45px -30px rgba(15,23,42,.35)}
-.service-icon{
-  width:48px;height:48px;border-radius:15px;background:#F2F4F8;
-  color:var(--navy);display:grid;place-items:center;
-  font-size:13px;font-weight:700;margin-bottom:14px
-}
-.service-card h3{font-size:15px;color:var(--navy);margin:0 0 7px}
-.service-card p{font-size:12.5px;color:var(--muted);margin:0 0 16px;flex:1}
-.service-bottom{
-  border-top:1px solid var(--line);padding-top:13px;
-  display:flex;align-items:center;justify-content:space-between;gap:8px
-}
-.service-bottom span{font-size:11px;color:var(--muted)}
-.service-bottom button{font-size:12px;padding:9px 12px;border-radius:10px}
+.services{background:#f8f8f6}
+.service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.service-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.service-icon{width:44px;height:44px;background:#f4f0e7;color:#987a48;border-radius:12px;display:grid;place-items:center;font-size:12px;font-weight:800;letter-spacing:1px;margin-bottom:15px}
+.service-card h3{font-size:16px;color:var(--navy);margin:0 0 8px}
+.service-card p{font-size:13px;color:var(--muted);margin:0 0 16px;flex:1}
+.service-card .btn{width:100%}
 
-/* PROCESS */
-.process{background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.process-card{background:var(--bg);border-radius:20px;padding:25px}
-.step-number{
-  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
-  background:var(--navy);color:var(--gold-light);font-size:13px;font-weight:700;margin-bottom:15px
-}
-.process-card b{display:block;color:var(--navy);font-size:14px;margin-bottom:6px}
-.process-card p{font-size:13px;color:var(--muted);margin:0}
+/* ABOUT */
+.about-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:center}
+.about-art{min-height:300px;background:var(--navy);border-radius:18px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-art img{width:150px;height:150px;object-fit:contain;position:relative;z-index:2}
+.about-copy h2{font-size:32px;line-height:1.2;color:var(--navy);margin:12px 0}
+.about-copy p{font-size:15px;color:var(--muted)}
+.about-points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.about-point{border:1px solid var(--line);border-radius:12px;padding:15px}
+.about-point b{display:block;font-size:14px;color:var(--navy)}
+.about-point small{font-size:12px;color:var(--muted)}
+
+/* HOW */
+.how{background:var(--navy);color:#fff}
+.how .section-head h2{color:#fff}
+.how .section-head p{color:#b8c4d7}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{border:1px solid #ffffff1f;background:#ffffff08;border-radius:14px;padding:22px}
+.step-no{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:700}
+.step h3{font-size:16px;color:#fff;margin:10px 0 6px}
+.step p{font-size:13px;color:#b8c4d7;margin:0}
 
 /* ORDER */
-.order{background:var(--bg)}
-.order-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:42px;align-items:start}
-.order-side{padding-top:8px}
-.order-side p{font-size:14px;color:var(--muted)}
-.order-side ul{list-style:none;padding:0;margin:22px 0;display:grid;gap:12px}
-.order-side li{font-size:13px;color:var(--muted)}
-.order-side li:before{content:"✓";color:var(--gold);font-weight:700;margin-right:10px}
-.order-form{
-  background:white;border:1px solid var(--line);border-radius:24px;padding:26px;
-  box-shadow:0 20px 55px -40px rgba(15,23,42,.35)
-}
-.order-form label{display:block;font-size:12px;color:var(--navy);font-weight:700;margin:14px 0 7px}
-.order-form input,.order-form textarea,.order-form select{
-  width:100%;padding:13px 14px;border:1px solid #DCE2EB;border-radius:12px;
-  background:#FCFDFE;color:var(--ink);font:inherit;font-size:13px
-}
-.order-form input:focus,.order-form textarea:focus,.order-form select:focus{
-  outline:none;border-color:var(--navy);background:white
-}
-.order-form textarea{min-height:105px;resize:vertical}
-.consent{display:flex!important;gap:10px;align-items:flex-start;font-size:11.5px!important;color:var(--muted)!important;margin:17px 0!important;font-weight:400!important}
-.consent input{width:auto;margin-top:4px;accent-color:var(--navy)}
-.form-actions{display:flex;gap:10px;margin-top:16px}
-.form-actions button{flex:1}
-.form-message{font-size:12px;min-height:20px;margin-top:10px}
-.success{color:#15803D}.error{color:#B91C1C}
+.order{background:var(--cream)}
+.order-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px;align-items:start}
+.order-info h2{font-size:36px;color:var(--navy);line-height:1.2;margin:12px 0}
+.order-info p{font-size:15px;color:var(--muted)}
+.order-info ul{list-style:none;padding:0;margin:22px 0}
+.order-info li{font-size:14px;color:#596477;padding:6px 0}
+.order-info li:before{content:"✓";color:#b08d52;font-weight:bold;margin-right:10px}
+.order-form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.order-form label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin:14px 0 6px}
+.order-form input,.order-form select,.order-form textarea{display:block;width:100%;border:1px solid #e1e4e9;border-radius:10px;background:#fcfcfc;padding:12px;font-size:14px;color:var(--ink);outline:none}
+.order-form input:focus,.order-form select:focus,.order-form textarea:focus{border-color:var(--gold)}
+.order-form textarea{min-height:90px;resize:vertical}
+.form-buttons{margin-top:18px}
+.form-note{font-size:12px;color:var(--muted);margin-top:10px}
 
 /* FAQ */
-.faq{background:#F7F8FA}
-.faq-wrap{max-width:800px}
-details{
-  border:1px solid var(--line);background:white;border-radius:15px;
-  padding:17px 19px;margin-bottom:11px
-}
-summary{
-  cursor:pointer;list-style:none;display:flex;justify-content:space-between;
-  gap:15px;font-size:13px;font-weight:700;color:var(--navy)
-}
+.faq-list{max-width:760px}
+details{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:10px 0;background:#fff}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:15px;font-weight:700;color:var(--navy)}
 summary::-webkit-details-marker{display:none}
-summary:after{content:"+";font-size:20px;color:var(--gold);line-height:1}
+summary:after{content:"+";color:var(--gold-dark);font-size:20px}
 details[open] summary:after{content:"−"}
-details p{font-size:12.5px;color:var(--muted);margin:12px 0 0}
+details p{font-size:14px;color:var(--muted);margin:12px 0 0}
 
 /* FOOTER */
-footer{background:var(--navy);color:#B9C6DC;padding:48px 0 25px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px;margin-bottom:28px}
-.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.footer-brand b{display:block;color:white;letter-spacing:2px}
-.footer-brand small{display:block;font-size:10px;color:#9FB0CC;letter-spacing:1px}
-.footer-desc{font-size:12px;color:#AEBBD1;max-width:360px}
-footer h4{font-size:13px;color:white;margin:0 0 12px}
-footer a{display:block;color:var(--gold-light);text-decoration:none;font-size:12px;margin:7px 0}
-footer a:hover{text-decoration:underline}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:11px;color:#899AB9}
+.footer{background:#121f36;color:#fff;padding:50px 0 22px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;margin-bottom:30px}
+.footer-brand{display:flex;align-items:center;gap:10px}
+.footer-brand img{width:44px;height:44px;object-fit:contain;border-radius:8px}
+.footer-brand b{font-size:14px;letter-spacing:2px}
+.footer-brand small{display:block;color:#a6b3c9;font-size:9px;letter-spacing:1px}
+.footer-desc{font-size:13px;color:#a6b3c9;max-width:320px;margin-top:12px}
+.footer h4{font-size:14px;margin:0 0 12px}
+.footer a{display:block;font-size:13px;color:#d2c09a;margin:7px 0}
+.footer-bottom{border-top:1px solid #ffffff14;padding-top:16px;font-size:12px;color:#8190aa}
 
-/* FLOATING CONTACT */
-.float-wa{
-  position:fixed;bottom:20px;right:20px;z-index:60;
-  background:#16834A;color:white;text-decoration:none;
-  padding:13px 17px;border-radius:99px;font-size:12px;font-weight:700;
-  box-shadow:0 8px 30px -10px rgba(0,0,0,.4)
-}
+/* FLOAT */
+.floating{position:fixed;right:16px;bottom:16px;z-index:90;border-radius:50px;background:var(--green);color:#fff;padding:13px 18px;font-size:14px;font-weight:800;box-shadow:0 8px 25px #0003}
 
 /* RESPONSIVE */
-@media(max-width:1000px){
-  .product-grid,.service-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-inner,.order-grid{grid-template-columns:1fr;gap:32px}
-  .hero{padding:65px 0 85px}
-  .hero-panel{max-width:600px}
+@media(max-width:950px){
+  .product-grid,.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-inner{grid-template-columns:1fr;text-align:left}
+  .hero-visual{max-width:440px;margin:auto;width:100%}
+  .steps{grid-template-columns:1fr}
 }
-@media(max-width:720px){
-  .nav a:not(.nav-cta){display:none}
-  .trust-grid,.process-grid{grid-template-columns:1fr}
-  section{padding:65px 0}
-  .footer-grid{grid-template-columns:1fr}
+@media(max-width:650px){
+  .container{width:calc(100% - 30px)}
+  .section{padding:55px 0}
+  .header-inner{padding:11px 0;min-height:auto}
+  .nav{width:100%;justify-content:space-between;gap:4px}
+  .nav a{font-size:12px;padding:6px 4px}
+  .nav .nav-order{padding:8px 11px}
+  .hero-inner{padding:42px 0;gap:28px}
+  .hero h1{font-size:40px;letter-spacing:-1.4px}
+  .hero-text{font-size:15px}
+  .hero-actions .btn{width:100%}
+  .visual-frame{padding:22px}
+  .trust-inner{grid-template-columns:1fr;gap:12px;padding:20px 0}
+  .section-head h2{font-size:28px}
+  .product-toolbar{display:block}
+  .filters{margin-bottom:13px;gap:6px}
+  .filter{font-size:12px;padding:8px 12px}
+  .search{width:100%}
+  .product-grid,.service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .product-art{min-height:115px;padding:12px}
+  .art-title{font-size:17px}
+  .product-content{padding:11px}
+  .product-content h3{font-size:14px}
+  .product-content p{font-size:12px}
+  .product-buy{flex-direction:column;align-items:stretch}
+  .product-buy .btn{width:100%}
+  .service-card{padding:14px}
+  .service-card h3{font-size:14px}
+  .service-card p{font-size:12px}
+  .about-inner{grid-template-columns:1fr;gap:25px}
+  .about-copy h2{font-size:28px}
+  .about-points{grid-template-columns:1fr}
+  .order-layout{grid-template-columns:1fr;gap:20px}
+  .order-info h2{font-size:30px}
+  .order-form{padding:18px}
+  .footer-grid{grid-template-columns:1fr;gap:20px}
+  .floating{right:12px;bottom:12px;padding:11px 15px;font-size:13px}
 }
-@media(max-width:480px){
-  .wrap{padding:0 17px}
-  .bar{height:68px}
-  .logo-image{width:42px;height:42px}
-  .hero h1{font-size:37px}
-  .hero{padding:55px 0 78px}
-  .product-grid,.service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
-  .product-cover{min-height:120px;padding:12px}
-  .product-cover span{font-size:10px;letter-spacing:1.2px}
-  .product-info{padding:13px}
-  .product-info h3{font-size:13px}
-  .product-info p{font-size:11px}
-  .product-bottom{flex-direction:column;align-items:stretch}
-  .product-bottom button{width:100%}
-  .service-card{padding:15px}
-  .service-card h3{font-size:13px}
-  .service-card p{font-size:11px}
-  .service-bottom{flex-direction:column;align-items:stretch}
-  .service-bottom button{width:100%}
-  .order-form{padding:20px}
-  .form-actions{flex-direction:column}
-  .float-wa{bottom:14px;right:14px;padding:12px 15px}
+@media(max-width:360px){
+  .container{width:calc(100% - 24px)}
+  .hero h1{font-size:34px}
+  .product-grid,.service-grid{gap:8px}
+  .product-content{padding:9px}
 }
 </style>
 </head>
-
 <body>
 
-<header>
-  <div class="wrap bar">
-    <a class="logo" href="#top" aria-label="OMNIA Corporation Store">
-     <img src="IMG_20261117_181320.png" alt="Logo OMNIA" class="logo-img">
-      <div class="logo-text">
-        <b>OMNIA</b>
-        <small>CORPORATION · STORE</small>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="#home">
+      <img src="IMG_20261117_181320.png" alt="Logo OMNIA">
+      <div>
+        <div class="brand-name">OMNIA</div>
+        <div class="brand-sub">CORPORATION · STORE</div>
       </div>
     </a>
-
     <nav class="nav">
       <a href="#produk">Produk</a>
       <a href="#layanan">Layanan</a>
-      <a href="#cara">Cara kerja</a>
+      <a href="#tentang">Tentang</a>
       <a href="#faq">FAQ</a>
-      <a class="nav-cta" href="#pesan">Pesan</a>
+      <a class="nav-order" href="#pesan">Pesan</a>
     </nav>
   </div>
 </header>
 
-<main id="top">
+<main id="home">
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
+  <div class="container hero-inner">
     <div>
-      <span class="eyebrow">Digital products & creative services</span>
-      <h1>Hal sederhana,<br><span>dibuat lebih baik.</span></h1>
-      <p class="hero-copy">
-        Temukan produk digital, desain kreatif, dan solusi praktis untuk membantu pekerjaan,
-        kebutuhan pribadi, serta perkembangan usaha Anda.
-      </p>
+      <div class="hero-badge"><span></span> DIGITAL GOODS & CREATIVE STUDIO</div>
+      <h1>Hal sederhana.<br><em>Dibuat lebih baik.</em></h1>
+      <p class="hero-text">Produk digital, desain, dan solusi praktis untuk membantu pekerjaan, usaha, serta kebutuhan sehari-hari.</p>
       <div class="hero-actions">
-        <a class="btn btn-gold" href="#produk">Jelajahi produk</a>
-        <a class="btn btn-outline" href="#pesan">Konsultasi kebutuhan</a>
+        <a href="#produk" class="btn btn-primary">Jelajahi produk</a>
+        <a href="#pesan" class="btn btn-light">Konsultasi kebutuhan</a>
       </div>
+      <div class="hero-note">Praktis · Jelas harganya · Dibuat dengan perhatian</div>
     </div>
-
-    <div class="hero-panel">
-      <div class="panel-top">
-        <div class="panel-icon">
-          <img src="omnia-logo.png" alt="">
-        </div>
-        <div>
-          <b>Asisten OMNIA</b>
-          <small>Temukan produk dan layanan yang sesuai</small>
-        </div>
-      </div>
-      <div class="chat-preview" id="chatThread">
-        <div class="chat-bubble">
-          Selamat datang di OMNIA. Apa yang sedang Anda butuhkan hari ini?
-        </div>
-      </div>
-      <div class="chat-choices">
-        <button class="choice" data-interest="Template bisnis">Template bisnis</button>
-        <button class="choice" data-interest="Desain promosi">Desain promosi</button>
-        <button class="choice" data-interest="CV dan karier">CV & karier</button>
-        <button class="choice" data-interest="Produk digital">Produk digital</button>
-        <button class="choice" data-interest="Aplikasi custom">Aplikasi custom</button>
+    <div class="hero-visual">
+      <div class="visual-frame">
+        <img src="IMG_20261117_181320.png" class="visual-logo" alt="Logo OMNIA Corporation">
       </div>
     </div>
   </div>
 </section>
 
 <!-- TRUST -->
-<div class="trust">
-  <div class="wrap trust-grid">
-    <div class="trust-card">
-      <div class="trust-icon">✓</div>
-      <b>Hasil diperiksa</b>
-      <span>Setiap pesanan diperiksa sebelum diserahkan.</span>
-    </div>
-    <div class="trust-card">
-      <div class="trust-icon">◇</div>
-      <b>Informasi transparan</b>
-      <span>Detail produk, harga dan pengerjaan dijelaskan di awal.</span>
-    </div>
-    <div class="trust-card">
-      <div class="trust-icon">◎</div>
-      <b>Pengawasan manusia</b>
-      <span>Teknologi AI digunakan sebagai alat bantu dengan pengawasan pemilik.</span>
-    </div>
+<div class="trust-strip">
+  <div class="container trust-inner">
+    <div class="trust-item"><div class="trust-mark">01</div><div><b>Produk praktis</b><small>Fokus pada kebutuhan nyata</small></div></div>
+    <div class="trust-item"><div class="trust-mark">02</div><div><b>Harga jelas</b><small>Informasi lengkap sebelum memesan</small></div></div>
+    <div class="trust-item"><div class="trust-mark">03</div><div><b>Dibantu langsung</b><small>Tanya lewat WhatsApp kapan saja</small></div></div>
   </div>
 </div>
 
 <!-- PRODUCTS -->
-<section class="products" id="produk">
-  <div class="wrap">
-    <div class="section-label">Omnia digital store</div>
-    <h2>Produk digital pilihan</h2>
-    <p class="section-lead">
-      Produk praktis yang dirancang untuk membantu usaha, produktivitas, belajar,
-      dan kebutuhan sehari-hari.
-    </p>
-
-    <div class="product-grid">
-
-      <article class="product-card">
-        <div class="product-cover"><span>BUSINESS FINANCE</span></div>
-        <div class="product-info">
-          <span class="product-tag">Bisnis</span>
-          <h3>Template Keuangan UMKM</h3>
-          <p>Catatan pemasukan, pengeluaran, modal, keuntungan dan rekap usaha sederhana.</p>
-          <div class="product-bottom">
-            <span class="product-price">Rp39.000</span>
-            <button class="btn btn-navy buy-btn" data-product="Template Keuangan UMKM" data-price="Rp39.000">Beli</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-cover cover-2"><span>CONTENT CREATOR</span></div>
-        <div class="product-info">
-          <span class="product-tag">Marketing</span>
-          <h3>Paket Konten Canva</h3>
-          <p>Template konten promosi media sosial yang dapat disesuaikan dengan brand Anda.</p>
-          <div class="product-bottom">
-            <span class="product-price">Rp39.000</span>
-            <button class="btn btn-navy buy-btn" data-product="Paket Konten Canva" data-price="Rp39.000">Beli</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-cover cover-3"><span>CAREER KIT</span></div>
-        <div class="product-info">
-          <span class="product-tag">Karier</span>
-          <h3>CV & Lamaran Kerja</h3>
-          <p>Template CV, surat lamaran dan panduan persiapan mencari pekerjaan.</p>
-          <div class="product-bottom">
-            <span class="product-price">Rp25.000</span>
-            <button class="btn btn-navy buy-btn" data-product="CV & Lamaran Kerja" data-price="Rp25.000">Beli</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-cover cover-4"><span>AI WORK PROMPTS</span></div>
-        <div class="product-info">
-          <span class="product-tag">Produktivitas</span>
-          <h3>AI Prompt Siap Pakai</h3>
-          <p>Prompt praktis untuk admin, marketing, customer service dan pekerjaan sehari-hari.</p>
-          <div class="product-bottom">
-            <span class="product-price">Rp29.000</span>
-            <button class="btn btn-navy buy-btn" data-product="AI Prompt Siap Pakai" data-price="Rp29.000">Beli</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-cover cover-5"><span>LEARNING AT HOME</span></div>
-        <div class="product-info">
-          <span class="product-tag">Pendidikan</span>
-          <h3>Worksheet Anak</h3>
-          <p>Aktivitas belajar, tracing, mewarnai, angka, huruf dan latihan dasar anak.</p>
-          <div class="product-bottom">
-            <span class="product-price">Rp25.000</span>
-            <button class="btn btn-navy buy-btn" data-product="Worksheet Anak" data-price="Rp25.000">Beli</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-cover cover-6"><span>START YOUR BUSINESS</span></div>
-        <div class="product-info">
-          <span class="product-tag">Panduan</span>
-          <h3>Panduan Memulai Usaha</h3>
-          <p>Panduan dasar memilih ide usaha, menentukan harga, promosi dan mengelola pelanggan.</p>
-          <div class="product-bottom">
-            <span class="product-price">Rp49.000</span>
-            <button class="btn btn-navy buy-btn" data-product="Panduan Memulai Usaha" data-price="Rp49.000">Beli</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-cover cover-7"><span>SMART BUSINESS TOOLS</span></div>
-        <div class="product-info">
-          <span class="product-tag">Tools</span>
-          <h3>Tools Digital</h3>
-          <p>Tools sederhana seperti kalkulator harga jual, keuntungan, invoice dan generator teks.</p>
-          <div class="product-bottom">
-            <span class="product-price">Mulai Rp49.000</span>
-            <button class="btn btn-navy buy-btn" data-product="Tools Digital" data-price="Mulai Rp49.000">Beli</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <div class="product-cover cover-8"><span>OMNIA BUSINESS KIT</span></div>
-        <div class="product-info">
-          <span class="product-tag">Bundle</span>
-          <h3>Business Starter Kit</h3>
-          <p>Bundle template usaha, konten, caption, invoice, panduan dan prompt AI.</p>
-          <div class="product-bottom">
-            <span class="product-price">Rp79.000</span>
-            <button class="btn btn-navy buy-btn" data-product="Business Starter Kit" data-price="Rp79.000">Beli</button>
-          </div>
-        </div>
-      </article>
-
+<section class="section" id="produk">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">OMNIA Digital Store</div>
+      <h2>Temukan yang Anda butuhkan.</h2>
+      <p>Produk digital pilihan untuk usaha, produktivitas, kreativitas, dan aktivitas sehari-hari.</p>
     </div>
+
+    <div class="product-toolbar">
+      <div class="filters" id="filters">
+        <button class="filter active" data-filter="all">Semua</button>
+        <button class="filter" data-filter="bisnis">Bisnis</button>
+        <button class="filter" data-filter="desain">Desain</button>
+        <button class="filter" data-filter="produktif">Produktivitas</button>
+        <button class="filter" data-filter="personal">Personal</button>
+      </div>
+      <input class="search" id="searchProduct" type="search" placeholder="Cari produk..." aria-label="Cari produk">
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <!-- Ganti nama, deskripsi, dan harga sesuai produk aslimu -->
+      <article class="product-card" data-category="bisnis" data-name="finance planner keuangan umkm">
+        <div class="product-art"><div><div class="art-label">BUSINESS FINANCE</div><span class="art-title">Finance<br>Planner</span></div></div>
+        <div class="product-content">
+          <span class="product-category">Bisnis</span>
+          <h3>Finance Planner UMKM</h3>
+          <p>Template pencatatan pemasukan dan pengeluaran usaha yang siap dipakai.</p>
+          <div class="product-buy"><span class="price">Rp 49.000</span><a class="btn btn-primary btn-sm" href="#pesan">Pesan</a></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="desain" data-name="template desain sosial media">
+        <div class="product-art" style="background:#344762"><div><div class="art-label">DESIGN</div><span class="art-title">Social<br>Kit</span></div></div>
+        <div class="product-content">
+          <span class="product-category">Desain</span>
+          <h3>Template Desain Sosial Media</h3>
+          <p>Kumpulan template postingan yang bisa diubah sesuai brand kamu.</p>
+          <div class="product-buy"><span class="price">Rp 39.000</span><a class="btn btn-primary btn-sm" href="#pesan">Pesan</a></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="produktif" data-name="checklist produktivitas harian jadwal">
+        <div class="product-art" style="background:#53647d"><div><div class="art-label">PRODUCTIVITY</div><span class="art-title">Daily<br>Planner</span></div></div>
+        <div class="product-content">
+          <span class="product-category">Produktivitas</span>
+          <h3>Planner Harian</h3>
+          <p>Checklist dan jadwal harian untuk membantu kerja lebih teratur.</p>
+          <div class="product-buy"><span class="price">Rp 25.000</span><a class="btn btn-primary btn-sm" href="#pesan">Pesan</a></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="personal" data-name="budget bulanan pribadi keuangan">
+        <div class="product-art" style="background:#897855"><div><div class="art-label">PERSONAL</div><span class="art-title">Budget<br>Bulanan</span></div></div>
+        <div class="product-content">
+          <span class="product-category">Personal</span>
+          <h3>Budget Bulanan Pribadi</h3>
+          <p>Atur pengeluaran rumah tangga dan target tabungan dengan mudah.</p>
+          <div class="product-buy"><span class="price">Rp 29.000</span><a class="btn btn-primary btn-sm" href="#pesan">Pesan</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="no-result" id="noResult">Produk tidak ditemukan. Coba kata kunci lain.</div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="services" id="layanan">
-  <div class="wrap">
-    <div class="section-label">Custom services</div>
-    <h2>Layanan sesuai kebutuhan</h2>
-    <p class="section-lead">
-      Jika Anda membutuhkan sesuatu yang lebih spesifik, kami dapat membantu menyiapkan
-      solusi yang disesuaikan dengan kebutuhan Anda.
-    </p>
-
+<section class="section services" id="layanan">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Layanan</div>
+      <h2>Butuh sesuatu yang khusus?</h2>
+      <p>Kalau produk di atas belum sesuai, ceritakan kebutuhanmu.</p>
+    </div>
     <div class="service-grid">
-      <article class="service-card">
-        <div class="service-icon">PU</div>
-        <h3>Poster UMKM</h3>
-        <p>Poster promosi produk, menu, diskon atau kebutuhan pemasaran usaha.</p>
-        <div class="service-bottom">
-          <span>Harga menyesuaikan</span>
-          <button class="btn btn-navy service-btn" data-service="Poster UMKM">Pesan</button>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">UD</div>
-        <h3>Undangan Digital</h3>
-        <p>Undangan digital untuk acara, pernikahan, ulang tahun dan kebutuhan lainnya.</p>
-        <div class="service-bottom">
-          <span>Harga menyesuaikan</span>
-          <button class="btn btn-navy service-btn" data-service="Undangan Digital">Pesan</button>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">IL</div>
-        <h3>Ilustrasi Gambar</h3>
-        <p>Ilustrasi custom untuk kebutuhan konten, hadiah, branding atau personal.</p>
-        <div class="service-bottom">
-          <span>Harga menyesuaikan</span>
-          <button class="btn btn-navy service-btn" data-service="Ilustrasi Gambar">Pesan</button>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">AP</div>
-        <h3>Aplikasi Sederhana</h3>
-        <p>Website kecil, halaman khusus atau tools sederhana berdasarkan kebutuhan.</p>
-        <div class="service-bottom">
-          <span>Harga menyesuaikan</span>
-          <button class="btn btn-navy service-btn" data-service="Aplikasi Sederhana">Pesan</button>
-        </div>
-      </article>
+      <div class="service-card"><div class="service-icon">DS</div><h3>Desain custom</h3><p>Template atau tampilan sesuai brand dan kebutuhan usahamu.</p><a class="btn btn-light btn-sm" href="#pesan">Tanya</a></div>
+      <div class="service-card"><div class="service-icon">TL</div><h3>Template kustom</h3><p>Spreadsheet atau dokumen yang disesuaikan dengan alur kerjamu.</p><a class="btn btn-light btn-sm" href="#pesan">Tanya</a></div>
+      <div class="service-card"><div class="service-icon">KS</div><h3>Konsultasi</h3><p>Diskusi singkat untuk memilih produk atau solusi yang paling pas.</p><a class="btn btn-light btn-sm" href="#pesan">Tanya</a></div>
+      <div class="service-card"><div class="service-icon">BT</div><h3>Bantuan setelah beli</h3><p>Pertanyaan tentang cara pakai produk dibantu lewat WhatsApp.</p><a class="btn btn-light btn-sm" href="#pesan">Tanya</a></div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process" id="cara">
-  <div class="wrap">
-    <div class="section-label">How it works</div>
-    <h2>Proses yang sederhana</h2>
-    <p class="section-lead">Dari memilih produk hingga menerima pesanan.</p>
+<!-- ABOUT -->
+<section class="section" id="tentang">
+  <div class="container about-inner">
+    <div class="about-art"><img src="IMG_20261117_181320.png" alt="Logo OMNIA"></div>
+    <div class="about-copy">
+      <div class="kicker">Tentang OMNIA</div>
+      <h2>Dibuat untuk membantu sehari-hari.</h2>
+      <p>OMNIA menyediakan produk digital dan desain yang sederhana, jelas, dan mudah dipakai, untuk pelaku usaha kecil, pekerja, maupun pengguna pribadi.</p>
+      <div class="about-points">
+        <div class="about-point"><b>Mudah dipakai</b><small>Tanpa keahlian teknis khusus</small></div>
+        <div class="about-point"><b>Harga terjangkau</b><small>Sekali beli, tanpa langganan</small></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="process-grid">
-      <div class="process-card">
-        <div class="step-number">01</div>
-        <b>Pilih produk atau layanan</b>
-        <p>Pilih produk yang tersedia atau ceritakan kebutuhan custom Anda.</p>
-      </div>
-      <div class="process-card">
-        <div class="step-number">02</div>
-        <b>Konfirmasi pesanan</b>
-        <p>Detail, harga, dan waktu pengerjaan dikonfirmasi sebelum proses dimulai.</p>
-      </div>
-      <div class="process-card">
-        <div class="step-number">03</div>
-        <b>Terima hasil</b>
-        <p>Produk atau file dikirimkan sesuai detail pesanan yang disepakati.</p>
-      </div>
+<!-- HOW -->
+<section class="section how">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker" style="color:#e0c58f">Cara pesan</div>
+      <h2>Tiga langkah mudah.</h2>
+      <p>Pilih produk, isi formulir, lalu lanjutkan pembayaran lewat WhatsApp.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-no">LANGKAH 01</div><h3>Pilih produk</h3><p>Pilih produk yang sesuai dengan kebutuhanmu di bagian Produk.</p></div>
+      <div class="step"><div class="step-no">LANGKAH 02</div><h3>Isi formulir</h3><p>Masukkan nama dan produk yang kamu pilih, lalu kirim.</p></div>
+      <div class="step"><div class="step-no">LANGKAH 03</div><h3>Konfirmasi via WhatsApp</h3><p>Kami akan membalas di WhatsApp untuk pembayaran dan pengiriman.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ORDER -->
-<section class="order" id="pesan">
-  <div class="wrap order-grid">
-    <div class="order-side">
-      <div class="section-label">Contact & order</div>
-      <h2>Mulai dari kebutuhan Anda.</h2>
-      <p>
-        Belum tahu harus memilih produk yang mana? Ceritakan kebutuhan Anda.
-        Kami akan membantu mengarahkan ke pilihan yang sesuai.
-      </p>
+<section class="section order" id="pesan">
+  <div class="container order-layout">
+    <div class="order-info">
+      <div class="kicker">Pesan atau konsultasi</div>
+      <h2>Ceritakan kebutuhanmu.</h2>
+      <p>Isi formulir di samping. Pesanan akan dilanjutkan lewat WhatsApp agar kamu bisa bertanya langsung.</p>
       <ul>
-        <li>Produk digital dan template</li>
-        <li>Desain sesuai kebutuhan</li>
-        <li>Tools dan aplikasi sederhana</li>
-        <li>Informasi harga sebelum pengerjaan</li>
+        <li>Jawaban lewat WhatsApp</li>
+        <li>Pilih lebih dari satu produk</li>
+        <li>Bisa menanyakan produk khusus</li>
       </ul>
     </div>
-
     <form class="order-form" id="orderForm">
       <label for="nama">Nama</label>
-      <input id="nama" name="nama" type="text" placeholder="Nama Anda" autocomplete="name" required>
+      <input id="nama" name="nama" required placeholder="Nama lengkap">
 
-      <label for="kontak">WhatsApp atau email</label>
-      <input id="kontak" name="kontak" type="text" placeholder="Nomor WhatsApp / email" required>
+      <label for="wa">Nomor WhatsApp</label>
+      <input id="wa" name="wa" required inputmode="tel" placeholder="08xxxxxxxxxx">
 
-      <label for="minat">Produk atau layanan yang diminati</label>
-      <select id="minat" name="minat" required>
-        <option value="">Pilih kebutuhan</option>
-        <option>Template Keuangan UMKM</option>
-        <option>Paket Konten Canva</option>
-        <option>CV & Lamaran Kerja</option>
-        <option>AI Prompt Siap Pakai</option>
-        <option>Worksheet Anak</option>
-        <option>Panduan Memulai Usaha</option>
-        <option>Tools Digital</option>
-        <option>Business Starter Kit</option>
-        <option>Poster UMKM</option>
-        <option>Undangan Digital</option>
-        <option>Ilustrasi Gambar</option>
-        <option>Aplikasi Sederhana</option>
-        <option>Template bisnis</option>
-        <option>Desain promosi</option>
-        <option>CV dan karier</option>
-        <option>Produk digital</option>
-        <option>Aplikasi custom</option>
-        <option>Lainnya</option>
+      <label for="produk">Produk</label>
+      <select id="produk" name="produk" required>
+        <option value="">Pilih produk</option>
+        <option>Finance Planner UMKM</option>
+        <option>Template Desain Sosial Media</option>
+        <option>Planner Harian</option>
+        <option>Budget Bulanan Pribadi</option>
+        <option>Lainnya / konsultasi</option>
       </select>
 
-      <label for="detail">Detail kebutuhan</label>
-      <textarea id="detail" name="detail" placeholder="Ceritakan secara singkat apa yang Anda butuhkan..."></textarea>
+      <label for="catatan">Catatan (opsional)</label>
+      <textarea id="catatan" name="catatan" placeholder="Tulis kebutuhan atau pertanyaanmu"></textarea>
 
-      <label class="consent">
-        <input type="checkbox" id="izin" name="izin" required>
-        <span>Saya setuju informasi ini digunakan untuk menghubungi dan memproses pesanan saya.</span>
-      </label>
-
-      <div class="form-actions">
-        <button class="btn btn-navy" type="submit" id="submitBtn">Kirim Pesanan</button>
-        <button class="btn btn-wa" type="button" id="waBtn">WhatsApp</button>
+      <div class="form-buttons">
+        <button class="btn btn-primary btn-block" type="submit">Kirim lewat WhatsApp</button>
       </div>
-      <div class="form-message" id="formMessage" role="status"></div>
+      <p class="form-note">Kamu akan diarahkan ke WhatsApp dengan pesan yang sudah terisi.</p>
     </form>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="wrap faq-wrap">
-    <div class="section-label">Frequently asked questions</div>
-    <h2>Pertanyaan umum</h2>
-    <p class="section-lead">Informasi singkat sebelum Anda melakukan pemesanan.</p>
-
-    <details>
-      <summary>Bagaimana cara membeli produk digital?</summary>
-      <p>Pilih produk yang Anda inginkan, klik tombol Beli, kemudian lengkapi form pesanan. Kami akan menghubungi Anda untuk konfirmasi selanjutnya.</p>
-    </details>
-
-    <details>
-      <summary>Bagaimana produk dikirim?</summary>
-      <p>Produk digital dikirim melalui media yang disepakati setelah pesanan dan pembayaran dikonfirmasi.</p>
-    </details>
-
-    <details>
-      <summary>Apakah bisa meminta desain custom?</summary>
-      <p>Bisa. Pilih layanan yang sesuai dan jelaskan kebutuhan Anda melalui formulir pemesanan.</p>
-    </details>
-
-    <details>
-      <summary>Apakah harga layanan custom sudah pasti?</summary>
-      <p>Harga layanan custom menyesuaikan tingkat kesulitan dan kebutuhan. Harga akan disampaikan dan disetujui sebelum pekerjaan dimulai.</p>
-    </details>
-
-    <details>
-      <summary>Apakah semua pekerjaan dibuat menggunakan AI?</summary>
-      <p>AI digunakan sebagai alat bantu dalam proses kerja. Hasil diperiksa dan proses tetap berada di bawah pengawasan pemilik.</p>
-    </details>
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">FAQ</div>
+      <h2>Pertanyaan yang sering ditanyakan.</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary>Bagaimana cara menerima produk setelah membayar?</summary><p>Setelah pembayaran dikonfirmasi, produk dikirim lewat WhatsApp atau email sesuai kesepakatan.</p></details>
+      <details><summary>Bisakah produk diubah sesuai kebutuhan saya?</summary><p>Bisa untuk beberapa produk. Tanyakan lewat formulir pesan agar kami bisa memastikan kebutuhanmu.</p></details>
+      <details><summary>Format file produknya apa saja?</summary><p>Tulis formatnya di deskripsi masing-masing produk, misalnya Excel, PDF, atau Canva. Ganti sesuai produk aslimu.</p></details>
+      <details><summary>Apakah ada garansi atau pengembalian dana?</summary><p>Isi kebijakan ini sesuai aturan yang kamu terapkan, misalnya pengembalian dana jika file rusak saat diterima.</p></details>
+    </div>
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
+<footer class="footer">
+  <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img src="omnia-logo.png" alt="Logo OMNIA" class="logo-image">
-          <div>
-            <b>OMNIA</b>
-            <small>CORPORATION · STORE</small>
-          </div>
+          <img src="IMG_20261117_181320.png" alt="Logo OMNIA">
+          <div><b>OMNIA</b><small>CORPORATION · STORE</small></div>
         </div>
-        <p class="footer-desc">
-          Produk digital dan solusi kreatif untuk kebutuhan usaha,
-          pekerjaan, dan kehidupan sehari-hari.
-        </p>
+        <p class="footer-desc">Produk digital, template, dan desain kreatif untuk membantu pekerjaan dan usaha sehari-hari.</p>
       </div>
-
       <div>
-        <h4>Jelajahi</h4>
-        <a href="#produk">Produk Digital</a>
-        <a href="#layanan">Layanan Custom</a>
-        <a href="#cara">Cara Kerja</a>
-        <a href="#faq">Pertanyaan Umum</a>
+        <h4>Menu</h4>
+        <a href="#produk">Produk</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#faq">FAQ</a>
       </div>
-
       <div>
-        <h4>Hubungi OMNIA</h4>
-        <a href="https://lynk.id/omnia_corp" target="_blank" rel="noopener noreferrer">Lynk OMNIA</a>
-        <a href="https://www.instagram.com/omnia.corp_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="#pesan">Form Pemesanan</a>
+        <h4>Kontak</h4>
+        <a id="footerWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      © <span id="year"></span> OMNIA Corporation · Store. All rights reserved.
-    </div>
+    <div class="footer-bottom">© <span id="year"></span> OMNIA Corporation. Semua hak dilindungi.</div>
   </div>
 </footer>
 
-<a class="float-wa" href="#pesan" aria-label="Hubungi OMNIA">Hubungi OMNIA ↗</a>
+<a class="floating" id="floatWa" href="#" target="_blank" rel="noopener">Chat WhatsApp</a>
 
 <script>
-/* ==============================
-   OMNIA STORE CONFIG
-============================== */
+// ====== GANTI NOMOR INI DENGAN NOMOR WHATSAPP OMNIA (format 62, tanpa 0 di depan) ======
+const WA_NUMBER = '6283823102360';
 
-/* Ganti dengan nomor WA bisnis OMNIA, tanpa tanda + */
-const NOMOR_WA = "62XXXXXXXXXX";
+const waBase = `https://wa.me/${WA_NUMBER}`;
+document.getElementById('footerWa').href = waBase;
+document.getElementById('floatWa').href = waBase + '?text=' + encodeURIComponent('Halo OMNIA, saya mau tanya produk.');
+document.getElementById('year').textContent = new Date().getFullYear();
 
-/* Endpoint Supabase yang sudah digunakan */
-const API_URL = "https://ianvkkefykbhvmxummye.supabase.co/functions/v1/toko";
+// Filter kategori dan pencarian produk
+const cards = [...document.querySelectorAll('.product-card')];
+const noResult = document.getElementById('noResult');
+let activeFilter = 'all';
 
-/* Tahun footer */
-document.getElementById("year").textContent = new Date().getFullYear();
-
-/* Helper untuk mengisi form dan scroll */
-function pilihKebutuhan(value, detailTambahan=""){
-  const minat = document.getElementById("minat");
-  const detail = document.getElementById("detail");
-
-  minat.value = value;
-
-  if(detailTambahan){
-    detail.value = detailTambahan;
-  }
-
-  document.getElementById("pesan").scrollIntoView({behavior:"smooth"});
+function applyFilter() {
+  const q = document.getElementById('searchProduct').value.trim().toLowerCase();
+  let shown = 0;
+  cards.forEach(card => {
+    const matchCat = activeFilter === 'all' || card.dataset.category === activeFilter;
+    const matchText = !q || card.dataset.name.includes(q) || card.textContent.toLowerCase().includes(q);
+    const show = matchCat && matchText;
+    card.hidden = !show;
+    if (show) shown++;
+  });
+  noResult.classList.toggle('show', shown === 0);
 }
 
-/* Asisten OMNIA */
-document.querySelectorAll(".choice").forEach(button=>{
-  button.addEventListener("click",()=>{
-    const value = button.dataset.interest;
-    const thread = document.getElementById("chatThread");
-
-    const userBubble = document.createElement("div");
-    userBubble.className = "chat-bubble reply";
-    userBubble.textContent = "Saya mencari: " + value;
-    thread.appendChild(userBubble);
-
-    const answer = document.createElement("div");
-    answer.className = "chat-bubble";
-    answer.textContent = "Baik, kami siap membantu. Silakan lengkapi formulir pesanan agar kami dapat memberikan informasi yang sesuai.";
-    thread.appendChild(answer);
-
-    pilihKebutuhan(value);
+document.querySelectorAll('.filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    applyFilter();
   });
 });
+document.getElementById('searchProduct').addEventListener('input', applyFilter);
 
-/* Tombol pembelian produk */
-document.querySelectorAll(".buy-btn").forEach(button=>{
-  button.addEventListener("click",()=>{
-    const product = button.dataset.product || "";
-    const price = button.dataset.price || "";
+// Form pesan: buka WhatsApp dengan isi pesan yang sudah terisi
+document.getElementById('orderForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target;
+  const text =
+`Halo OMNIA, saya mau memesan.
 
-    pilihKebutuhan(
-      product,
-      "Saya tertarik dengan " + product + " (" + price + "). Mohon informasi pembelian."
-    );
-  });
-});
-
-/* Tombol layanan custom */
-document.querySelectorAll(".service-btn").forEach(button=>{
-  button.addEventListener("click",()=>{
-    const service = button.dataset.service || "";
-
-    pilihKebutuhan(
-      service,
-      "Saya ingin memesan layanan " + service + ". Mohon informasi lebih lanjut."
-    );
-  });
-});
-
-/* Form pemesanan */
-const form = document.getElementById("orderForm");
-const formMessage = document.getElementById("formMessage");
-const submitBtn = document.getElementById("submitBtn");
-
-form.addEventListener("submit",async (event)=>{
-  event.preventDefault();
-
-  const data = {
-    nama:document.getElementById("nama").value.trim(),
-    kontak:document.getElementById("kontak").value.trim(),
-    minat:document.getElementById("minat").value,
-    detail:document.getElementById("detail").value.trim(),
-    izin:document.getElementById("izin").checked
-  };
-
-  if(!data.izin){
-    formMessage.textContent = "Mohon centang persetujuan terlebih dahulu.";
-    formMessage.className = "form-message error";
-    return;
-  }
-
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Mengirim...";
-  formMessage.textContent = "";
-  formMessage.className = "form-message";
-
-  try{
-    const response = await fetch(API_URL,{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(data)
-    });
-
-    if(!response.ok){
-      throw new Error("Pengiriman belum berhasil");
-    }
-
-    formMessage.textContent = "Pesanan berhasil dikirim. Terima kasih telah menghubungi OMNIA.";
-    formMessage.className = "form-message success";
-    form.reset();
-
-  }catch(error){
-    formMessage.textContent = "Pesanan belum terkirim melalui formulir. Silakan gunakan WhatsApp.";
-    formMessage.className = "form-message error";
-  }finally{
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Kirim Pesanan";
-  }
-});
-
-/* WhatsApp */
-document.getElementById("waBtn").addEventListener("click",()=>{
-  const nama = document.getElementById("nama").value.trim();
-  const kontak = document.getElementById("kontak").value.trim();
-  const minat = document.getElementById("minat").value;
-  const detail = document.getElementById("detail").value.trim();
-
-  if(NOMOR_WA === "62XXXXXXXXXX"){
-    formMessage.textContent = "Nomor WhatsApp OMNIA belum diatur. Silakan hubungi melalui Lynk OMNIA.";
-    formMessage.className = "form-message error";
-    return;
-  }
-
-  const pesan = [
-    "Halo OMNIA, saya ingin bertanya atau memesan.",
-    "",
-    "Nama: " + (nama || "-"),
-    "Kontak: " + (kontak || "-"),
-    "Minat: " + (minat || "-"),
-    "Detail: " + (detail || "-")
-  ].join("\n");
-
-  const url = "https://wa.me/" + NOMOR_WA + "?text=" + encodeURIComponent(pesan);
-  window.open(url,"_blank");
+Nama: ${f.nama.value}
+No. WhatsApp: ${f.wa.value}
+Produk: ${f.produk.value}
+Catatan: ${f.catatan.value || '-'}`;
+  window.open(`${waBase}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
 });
 </script>
-
 </body>
 </html>
